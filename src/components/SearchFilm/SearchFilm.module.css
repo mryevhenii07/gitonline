@@ -1,0 +1,33 @@
+.input{
+    width: 350px;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 18px;
+    background-color: black;
+    border:none;
+    outline: none;
+    border: 3px solid #222222;
+    color: #758084;
+}
+
+input:hover{
+border: 3px solid #323131;
+color: #646a6d;
+}
+button{
+
+    width: 100px;
+    height: 40px;
+    margin-left: 3px;
+    border:none;
+    outline: none;
+    border: 5px solid #222222;
+    font-size: 18px;
+    color: #758084;
+   
+background-color: #222222;}
+
+button:hover{
+    background-color: #373737;
+    border: 5px solid #373737;
+}
