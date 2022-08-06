@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/gitonline/static/css/main.4a2a9d54.chunk.css",
+    "main.js": "/gitonline/static/js/main.b78b73e0.chunk.js",
+    "main.js.map": "/gitonline/static/js/main.b78b73e0.chunk.js.map",
+    "runtime-main.js": "/gitonline/static/js/runtime-main.d6a6b80c.js",
+    "runtime-main.js.map": "/gitonline/static/js/runtime-main.d6a6b80c.js.map",
+    "static/css/2.679831fc.chunk.css": "/gitonline/static/css/2.679831fc.chunk.css",
+    "static/js/2.7c680355.chunk.js": "/gitonline/static/js/2.7c680355.chunk.js",
+    "static/js/2.7c680355.chunk.js.map": "/gitonline/static/js/2.7c680355.chunk.js.map",
+    "index.html": "/gitonline/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/gitonline/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.4a2a9d54.chunk.css.map": "/gitonline/static/css/main.4a2a9d54.chunk.css.map",
+    "static/js/2.7c680355.chunk.js.LICENSE.txt": "/gitonline/static/js/2.7c680355.chunk.js.LICENSE.txt",
+    "static/media/gidonline.f0e98dab.jpg": "/gitonline/static/media/gidonline.f0e98dab.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d6a6b80c.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.7c680355.chunk.js",
+    "static/css/main.4a2a9d54.chunk.css",
+    "static/js/main.b78b73e0.chunk.js"
+  ]
+}
