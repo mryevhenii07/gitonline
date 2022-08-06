@@ -6,6 +6,16 @@
     height: 160px;
 background-color:#111111;
 }
+.gidOnline{
+font-size: 170px;
+color: rgba(100, 100, 100, 0.2);
+/* color: #5c5a5a; */
+
+width: 100%;
+text-align:center;
+margin: 0;
+
+}
 
 .header__wrap_left_block{
     display: flex;
@@ -13,11 +23,6 @@ background-color:#111111;
     flex-wrap: wrap;
 margin: 40px 0 40px 110px;
 }
-
-
-
-
-
 
 .navigation{
   
@@ -33,7 +38,7 @@ margin: 40px 0 40px 110px;
      padding-right: 12px;
     }
 .navigation_item:first-child{
-    margin-left: -35px;
+    margin-left: 0;
   
 }
 .navigation_item:last-child{

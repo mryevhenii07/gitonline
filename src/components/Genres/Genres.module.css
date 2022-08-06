@@ -1,0 +1,20 @@
+.tr{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #111111;
+}
+
+.tr td{
+     width: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: 3px;
+    background-color: #222222;
+    padding: 7px 0;
+    color: rgb(151, 149, 147);
+    cursor: pointer;
+
+}
+td:hover{ background-color: rgb(65, 65, 63);}

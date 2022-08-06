@@ -2,9 +2,18 @@ import axios from 'axios';
 const API_KEY = '971b2ef273ae22e8f151e27d46ce7887';
 const BASE_URL = `https://api.themoviedb.org`;
 
-export function fetchTrending() {
+export function fetchTrending(currentPage) {
   return axios
-    .get(`${BASE_URL}/3/trending/movie/day?api_key=${API_KEY}`)
+    .get(
+      `${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=${currentPage}&total_pages=200`,
+    )
+
+    .then(trends => trends)
+    .catch(console.error());
+}
+export function fetchTrendingWeek() {
+  return axios
+    .get(`${BASE_URL}/3/trending/movie/day?api_key=${API_KEY}&page=1`)
 
     .then(trends => trends)
     .catch(console.error());

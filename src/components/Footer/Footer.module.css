@@ -1,0 +1,29 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-top: 5px;
+    background-color: #222222;
+    padding: 0 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.wrap__contacts{
+    display: flex;
+}
+
+.wrap__contacts > li a {
+    margin-right: 10px; color: rgb(101, 99, 96);
+
+    font-size: 18px;
+ }
+
+ .wrap__contacts > li a:hover{
+       color: rgb(200, 194, 187);
+}
+.gitOnline{color: rgb(200, 194, 187);
+    font-size: 18px;}
+
+    .gitOnline  a {color: rgb(101, 99, 96);}

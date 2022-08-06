@@ -1,6 +1,9 @@
 .item{
-    width: 290px;
-   margin-top: 3px;
+    width: 165px;
+margin-top: 3px;
+
+
+
 
     list-style: none;
     padding: 10px;
@@ -11,18 +14,22 @@
 .list{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    width: 877px;
+  flex-wrap: nowrap;
+
+    overflow: hidden;
+ 
+    width: 1200px;
+    min-height: 230px;
    
     background-color: black;
+    overflow: hidden;
    
 }
 
 .publicity{width: 320px;color:red;background-color: #222222;margin-top: 5px;}
 
-.wrap{display: flex;justify-content: space-between;margin-bottom: 30px;}
-.wrap__info{display: flex;justify-content: space-between;
-}
+.wrap{display: flex;justify-content: space-between;}
+
 
 .title{
     text-align: center;
