@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ReactPaginate from 'react-paginate';
-// import s from './Pagination.module.css';
+// import styles from './Pagination.module.css';
 // import '../../App.css';
 import './Pagination.css';
 

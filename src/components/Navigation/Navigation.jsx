@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import SearchFilm from '../SearchFilm/SearchFilm';
@@ -8,7 +8,7 @@ import gidonline from '../../images/gidonline.jpg';
 const Navigation = () => {
   return (
     <div>
-      <h1 className={s.gidOnline}>Gid Online</h1>{' '}
+      <h1 className={s.gidOnline}>Git Online</h1>
       <header className={s.header}>
         <div>
           <Link to="/">
@@ -36,9 +36,7 @@ const Navigation = () => {
                 Home
               </NavLink>
             </li>
-            <li style={{ color: 'white' }} className={s.navigation_item}>
-              Hit
-            </li>
+            <li className={s.navigation_item}>Hit</li>
             <li className={s.navigation_item}>
               <NavLink
                 className={s.navLink}
@@ -55,9 +53,7 @@ const Navigation = () => {
               </NavLink>
             </li>
 
-            <li style={{ color: 'white' }} className={s.navigation_item}>
-              wwwwwwwwww
-            </li>
+            <li className={s.navigation_item}>Top</li>
           </ul>
         </div>
       </header>

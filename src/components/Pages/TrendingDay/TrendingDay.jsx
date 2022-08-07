@@ -20,7 +20,12 @@ const TrendingDay = () => {
       <ul className={s.list}>
         {trends.map(({ id, original_title, poster_path }) => (
           <Link to={`movies/${id}`} key={id} className={s.item}>
-            <img src={`${IMAGE}${poster_path}`} alt="dd" width="100%" />
+            <img
+              src={`${IMAGE}${poster_path}`}
+              alt="dd"
+              width="151.5"
+              height="226"
+            />
             <h4 className={s.title}>{original_title}</h4>
           </Link>
         ))}

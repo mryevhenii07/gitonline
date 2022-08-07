@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { fetchTrending } from '../../../services/movie-api';
 import Pagination from '../../Pagination/Pagination';
 import s from './Home.module.css';
+// import defaultImg from '../../../images/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg';
+import SideBar from '../../Sidebar/SideBar';
 
 const IMAGE = 'https://image.tmdb.org/t/p/w500/';
 
@@ -45,7 +47,9 @@ const Home = () => {
             ),
           )}
         </ul>
-        <div className={s.publicity}>fdddddddddddddddd</div>
+        <div className={s.publicity}>
+          <SideBar />
+        </div>
       </div>
       <Pagination onChangePage={number => setCurrentPage(number)} />
     </div>

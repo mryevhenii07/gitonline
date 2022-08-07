@@ -1,0 +1,81 @@
+.wrapRegistration{ 
+    display: flex; 
+    border: 5px solid rgb(96, 95, 95);
+    background-color: rgb(96, 95, 95);
+}
+
+.wrapRegistration button{ 
+    color:#a9a5a5;
+    width: 50%;
+    border:none;
+    outline: none;
+/*  border: 1px solid #040404;
+border-bottom: 5px solid #040404; */
+
+ border-left: 5px solid rgb(96, 95, 95);  
+font-weight: bold;
+margin: 0;
+background-color: #383838;
+
+
+}
+.wrapRegistration button:hover{font-size: 19px;color: #a9a5a5;}
+
+.wrapRegistration button:first-child{
+    border-left: 1px solid #040404;}
+
+.featuredMovies{
+    color:#a9a5a5;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;border-right: 5px solid rgb(96, 95, 95);
+border-left: 5px solid rgb(96, 95, 95);
+    
+
+}
+/* .featuredMovies:hover{transform: scale(1.1);} */
+.arrow{
+    color:red;
+font-size: 16px;
+margin-left: 5px;
+
+
+
+}
+
+.listFilms{
+    display: flex;
+flex-wrap: wrap;
+max-height: 1205px;
+overflow: hidden;
+
+}
+
+.itemFilm{
+    max-width: 130px;
+    margin-top: 5px;
+    /* background-color: #fff; */
+    margin-left: 5px;
+    /* border: 4px solid red; */
+    cursor: pointer;
+
+}
+
+.itemFilm:hover{
+ 
+    border: 4px solid rgb(131, 129, 129); 
+      transform: none;}
+
+.titleFilm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+background-color: #222222;
+color: #a9a5a5;}
+
+.wrapListFilm{padding:0 8px;}
+.wrapWrapListFilm{
+    border: 8px solid rgb(96, 95, 95);
+
+}

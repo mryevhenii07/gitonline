@@ -14,14 +14,26 @@
     flex-wrap: wrap;
     width: 877px;
    
-    background-color: black;
+    background-color: rgb(15, 14, 14);
+    padding: 0;
    
 }
 
-.publicity{width: 320px;color:red;background-color: #222222;margin-top: 5px;}
+.publicity{
+    width: 320px;
+    color:red;
+    background-color: #383838;
+    margin-top: 5px;}
 
-.wrap{display: flex;justify-content: space-between;margin-bottom: 30px;}
-.wrap__info{display: flex;justify-content: space-between;
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.wrap__info{
+    display: flex;
+    justify-content: space-between;
 }
 
 .title{

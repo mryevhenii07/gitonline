@@ -16,7 +16,9 @@ const AppBar = () => {
     <div>
       <Navigation />
       <TrendingDay />
+
       <Genres />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="movies" element={<Movies />} />

@@ -17,7 +17,7 @@ const MovieDetails = () => {
   return (
     <ul className={s.wrap}>
       {film && (
-        <li key={film.id}>
+        <li key={film.id} className={s.item}>
           <div className={s.wrapBlock}>
             <img
               src={`${IMAGE}${film.poster_path}`}

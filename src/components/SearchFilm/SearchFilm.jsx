@@ -1,20 +1,42 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 import s from './SearchFilm.module.css';
+import { fetchSearchFilm } from '../../services/movie-api';
 
 const SearchFilm = () => {
+  const [valueInput, setValueInput] = useState('');
+
+  // useEffect(() => {
+  //   fetchSearchFilm(valueInput).then(console.log);
+  // }, [valueInput]);
+
+  const reset = () => {
+    setValueInput('');
+  };
+
+  const onSubmitForm = e => {
+    e.preventDefault();
+    reset();
+  };
+
+  const onChangeInput = e => {
+    setValueInput(e.target.value);
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmitForm}>
       <label htmlFor="">
         <input
+          onChange={onChangeInput}
           type="text"
           name=""
           id=""
           className={s.input}
           placeholder="Name title..."
+          value={valueInput}
         />
       </label>
-      <button>Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 };
