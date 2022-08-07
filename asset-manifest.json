@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/gitonline/static/css/main.be7ad243.chunk.css",
-    "main.js": "/gitonline/static/js/main.2f06c724.chunk.js",
-    "main.js.map": "/gitonline/static/js/main.2f06c724.chunk.js.map",
+    "main.css": "/gitonline/static/css/main.96d5b7da.chunk.css",
+    "main.js": "/gitonline/static/js/main.5fb3195e.chunk.js",
+    "main.js.map": "/gitonline/static/js/main.5fb3195e.chunk.js.map",
     "runtime-main.js": "/gitonline/static/js/runtime-main.d6a6b80c.js",
     "runtime-main.js.map": "/gitonline/static/js/runtime-main.d6a6b80c.js.map",
     "static/css/2.679831fc.chunk.css": "/gitonline/static/css/2.679831fc.chunk.css",
-    "static/js/2.2d79d717.chunk.js": "/gitonline/static/js/2.2d79d717.chunk.js",
-    "static/js/2.2d79d717.chunk.js.map": "/gitonline/static/js/2.2d79d717.chunk.js.map",
+    "static/js/2.00b5a28c.chunk.js": "/gitonline/static/js/2.00b5a28c.chunk.js",
+    "static/js/2.00b5a28c.chunk.js.map": "/gitonline/static/js/2.00b5a28c.chunk.js.map",
     "index.html": "/gitonline/index.html",
     "static/css/2.679831fc.chunk.css.map": "/gitonline/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.be7ad243.chunk.css.map": "/gitonline/static/css/main.be7ad243.chunk.css.map",
-    "static/js/2.2d79d717.chunk.js.LICENSE.txt": "/gitonline/static/js/2.2d79d717.chunk.js.LICENSE.txt",
+    "static/css/main.96d5b7da.chunk.css.map": "/gitonline/static/css/main.96d5b7da.chunk.css.map",
+    "static/js/2.00b5a28c.chunk.js.LICENSE.txt": "/gitonline/static/js/2.00b5a28c.chunk.js.LICENSE.txt",
     "static/media/gidonline.f0e98dab.jpg": "/gitonline/static/media/gidonline.f0e98dab.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d6a6b80c.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.2d79d717.chunk.js",
-    "static/css/main.be7ad243.chunk.css",
-    "static/js/main.2f06c724.chunk.js"
+    "static/js/2.00b5a28c.chunk.js",
+    "static/css/main.96d5b7da.chunk.css",
+    "static/js/main.5fb3195e.chunk.js"
   ]
 }
