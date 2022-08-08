@@ -6,7 +6,9 @@
     padding: 10px;
     background-color: #222222;
 }
-.item:hover{background-color: #373636;}
+.item:hover{background-color: #373636;
+
+}
 
 .list{
     display: flex;
@@ -34,12 +36,25 @@
 .wrap__info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
 }
+.year{
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(255, 0, 0);}
 
 .title{
-    text-align: center;
+    width: 100%;
 color: #b3b3b3;
 font-weight: bold;
 text-decoration: none;
 font-size: 20px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10px;
+text-align: center;
 }

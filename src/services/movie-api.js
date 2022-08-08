@@ -18,9 +18,16 @@ export function fetchTrendingWeek() {
     .then(trends => trends)
     .catch(console.error());
 }
-export function fetchSidebar() {
+export function fetchSidebarFilms() {
   return axios
     .get(`${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=4`)
+
+    .then(trends => trends.data.results)
+    .catch(console.error());
+}
+export function fetchSidebarSerials() {
+  return axios
+    .get(`${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=6`)
 
     .then(trends => trends.data.results)
     .catch(console.error());

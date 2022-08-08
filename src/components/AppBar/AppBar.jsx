@@ -16,7 +16,6 @@ const AppBar = () => {
     <div>
       <Navigation />
       <TrendingDay />
-
       <Genres />
 
       <Routes>

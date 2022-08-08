@@ -32,7 +32,7 @@ const SearchFilm = () => {
           name=""
           id=""
           className={s.input}
-          placeholder="Name title..."
+          placeholder="Search film..."
           value={valueInput}
         />
       </label>

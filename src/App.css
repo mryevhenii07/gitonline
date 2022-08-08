@@ -1,4 +1,12 @@
-body{background-color: black}
+body{background-color: black;
+
+
+background: url("./images/front.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; 
+        background-size: cover;
+}
 li{list-style: none;}
 
 *{

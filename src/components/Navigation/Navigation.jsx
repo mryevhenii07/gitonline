@@ -28,7 +28,7 @@ const Navigation = () => {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        color: '#5c5a5a ',
+                        color: 'rgb(131, 129, 129)',
                       }
                     : { color: '#464545' }
                 }
@@ -36,24 +36,36 @@ const Navigation = () => {
                 Home
               </NavLink>
             </li>
-            <li className={s.navigation_item}>Hit</li>
             <li className={s.navigation_item}>
               <NavLink
                 className={s.navLink}
-                to="/movies"
+                to="/"
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        color: '#5c5a5a',
+                        color: 'rgb(131, 129, 129)',
                       }
                     : { color: '#464545' }
                 }
               >
-                Movies
+                Hit
               </NavLink>
             </li>
-
-            <li className={s.navigation_item}>Top</li>
+            <li className={s.navigation_item}>
+              <NavLink
+                className={s.navLink}
+                to="/"
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        color: 'rgb(131, 129, 129)',
+                      }
+                    : { color: '#464545' }
+                }
+              >
+                Top
+              </NavLink>
+            </li>
           </ul>
         </div>
       </header>

@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import ReactPaginate from 'react-paginate';
 
 import { fetchTrending } from '../../../services/movie-api';
 import Pagination from '../../Pagination/Pagination';
 import s from './Home.module.css';
-// import defaultImg from '../../../images/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg';
 import SideBar from '../../Sidebar/SideBar';
+import Ratings from '../../Rating/Rating';
 
 const IMAGE = 'https://image.tmdb.org/t/p/w500/';
 
@@ -37,11 +36,19 @@ const Home = () => {
               release_date,
             }) => (
               <Link to={`movies/${id}`} key={id} className={s.item}>
-                <img src={`${IMAGE}${poster_path}`} alt="dd" width="100%" />
+                <img
+                  src={`${IMAGE}${poster_path}`}
+                  alt="dd"
+                  width="100%"
+                  height="405"
+                />
                 <h4 className={s.title}>{original_title}</h4>
 
                 <div className={s.wrap__info}>
-                  <p>{vote_average}</p> <p>{release_date}</p>
+                  <p>
+                    <Ratings star={vote_average} />
+                  </p>
+                  <p className={s.year}>{release_date}</p>
                 </div>
               </Link>
             ),

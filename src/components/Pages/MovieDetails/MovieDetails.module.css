@@ -1,6 +1,9 @@
-.wrap{padding: 0;
-    margin-top: 5px;}
-
+.wrap{padding:  0;
+  border-left: 10px solid #222222;
+  border-right: 10px solid #222222;
+ 
+ }
+.item{display: flex;}
     .item:hover{transform: none;}
 
 .wrapBlock {

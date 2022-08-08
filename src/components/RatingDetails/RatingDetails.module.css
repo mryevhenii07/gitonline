@@ -1,0 +1,26 @@
+.wrap{
+    display: flex;
+
+width: 900px;
+height: 80px;
+border-top: 4px solid #111111;
+border-bottom: 4px solid #111111;
+border-left: 4px solid #111111;
+padding: 0 10px;
+background-color: rgb(59, 59, 59);
+
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+width: 620px;
+
+    height: 80px;
+
+}
+.rating span {font-size: 60px;}
+
+.wrapInfo{padding:6px 0 0  20px;}
+.movieRating{height: 50%; display: flex;align-items: center; font-weight: bold;font-size: 30px; color: rgb(178, 178, 176);}
+.totalVotes{ height: 50%; display: flex;align-items: center;font-weight: bold;font-size: 20px;color: rgb(178, 178, 176);}
