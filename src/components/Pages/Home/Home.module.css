@@ -1,7 +1,7 @@
 .item{
     width: 290px;
-   margin-top: 3px;
-
+   /* margin-top: 3px; */
+border: 3px solid #111111;
     list-style: none;
     padding: 10px;
     background-color: #222222;
@@ -12,7 +12,7 @@
 
 .list{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 877px;
    
