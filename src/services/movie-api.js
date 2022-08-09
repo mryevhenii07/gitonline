@@ -53,3 +53,11 @@ export function fetchCast(movie_id) {
 //     film => film.data.result,
 //   );
 // }
+
+export function fetchSearchFilm(searchMovie) {
+  return axios
+    .get(
+      `${BASE_URL}/3/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&query=${searchMovie}&page=1`,
+    )
+    .then(res => res.data.results);
+}

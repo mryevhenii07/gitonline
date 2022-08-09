@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 
 import { fetchInfoFilm } from '../../../services/movie-api';
 import SideBar from '../../Sidebar/SideBar';
-import RatingDetails from '../../RatingDetails/RatingDetails';
+import RatingDetails from './RatingDetails/RatingDetails';
+import Video from '../MovieDetails/Video/Video';
 
 import s from './MovieDetails.module.css';
 
@@ -80,6 +81,7 @@ const MovieDetails = () => {
                 rating={film.vote_average}
               />
             </div>
+            <Video />
             {/* <div style={{ color: 'white' }}>
             <div>jjjjjjjjjjjjjj</div>{' '}
           </div> */}

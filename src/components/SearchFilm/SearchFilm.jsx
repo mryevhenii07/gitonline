@@ -1,26 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
+import { SearchContext } from '../../App';
 import s from './SearchFilm.module.css';
-import { fetchSearchFilm } from '../../services/movie-api';
 
 const SearchFilm = () => {
-  const [valueInput, setValueInput] = useState('');
-
-  // useEffect(() => {
-  //   fetchSearchFilm(valueInput).then(console.log);
-  // }, [valueInput]);
+  const [query, setQuery] = useState('');
+  const { searchValue, setSearchValue } = useContext(SearchContext);
 
   const reset = () => {
-    setValueInput('');
+    setQuery('');
   };
 
   const onSubmitForm = e => {
     e.preventDefault();
+    setSearchValue(query);
     reset();
   };
 
   const onChangeInput = e => {
-    setValueInput(e.target.value);
+    setQuery(e.target.value);
   };
 
   return (
@@ -33,7 +31,7 @@ const SearchFilm = () => {
           id=""
           className={s.input}
           placeholder="Search film..."
-          value={valueInput}
+          value={query}
         />
       </label>
       <button type="submit">Search</button>

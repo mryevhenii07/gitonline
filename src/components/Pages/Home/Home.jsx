@@ -1,33 +1,50 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { fetchTrending } from '../../../services/movie-api';
+import { fetchTrending, fetchSearchFilm } from '../../../services/movie-api';
 import Pagination from '../../Pagination/Pagination';
 import s from './Home.module.css';
 import SideBar from '../../Sidebar/SideBar';
 import Ratings from '../../Rating/Rating';
-
+import { SearchContext } from '../../../App';
+import Fuse from 'fuse.js';
 const IMAGE = 'https://image.tmdb.org/t/p/w500/';
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [trends, setTrends] = useState([]);
+  const [query, setQuery] = useState([]);
+
+  const { searchValue } = useContext(SearchContext);
+
+  useEffect(() => {
+    fetchSearchFilm(searchValue).then(setQuery);
+  }, [searchValue]);
 
   useEffect(() => {
     fetchTrending(currentPage)
       .then(trends => trends.data.results)
       .then(setTrends);
-    // window.scrollTo(800, 800);
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  // console.log(trends);
+  const fuse = new Fuse(query, {
+    includeScore: true,
+    keys: ['title', 'original_title'],
+  });
+
+  const results = fuse.search(searchValue);
+
+  const characterResults = searchValue
+    ? results.map(result => result.item)
+    : trends;
+  // console.log('results', results);
+  // console.log('trends', trends);
   return (
     <div>
       <div className={s.wrap}>
-        {' '}
         <ul className={s.list}>
-          {trends.map(
+          {characterResults.map(
             ({
               id,
               original_title,

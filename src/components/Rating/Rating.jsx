@@ -6,14 +6,13 @@ import s from './Rating.module.css';
 
 const Ratings = ({ star }) => {
   const rating = star.toFixed(1) - 3;
-  console.log(rating);
 
   return (
     <Stack spacing={1}>
       <Rating
         className={s.rating}
         name="customized-10"
-        defaultValue={rating}
+        defaultValue={Number(rating)}
         max={7}
         precision={0.5}
         readOnly
