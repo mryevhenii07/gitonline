@@ -39,7 +39,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <div style={{ width: 1200, margin: ' 0 auto', backgroundColor: '#111111' }}>
+    <div style={{ width: 1200, margin: ' 0 auto' }}>
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
         <Navigation />
         <TrendingDay />

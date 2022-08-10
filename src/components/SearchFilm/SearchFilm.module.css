@@ -10,7 +10,7 @@
     color: #758084;
 }
 
-input:hover{
+.input:hover{
 border: 3px solid #323131;
 color: #646a6d;
 }

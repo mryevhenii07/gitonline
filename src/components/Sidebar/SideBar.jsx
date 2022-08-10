@@ -22,7 +22,7 @@ const SideBar = () => {
     fetchSidebarSerials().then(setSerials);
   }, []);
   return (
-    <div>
+    <div className={s.wrapWrap}>
       <div className={s.wrapRegistration}>
         <BasicModal />
 

@@ -11,6 +11,14 @@ export function fetchTrending(currentPage) {
     .then(trends => trends)
     .catch(console.error());
 }
+export function FetchWhichWatchFilm() {
+  return axios
+    .get(`${BASE_URL}/3/trending/movie/day?api_key=${API_KEY}&page=10`)
+
+    .then(res => res.data.results)
+    .catch(console.error());
+}
+
 export function fetchTrendingWeek() {
   return axios
     .get(`${BASE_URL}/3/trending/movie/day?api_key=${API_KEY}&page=1`)
@@ -47,12 +55,6 @@ export function fetchCast(movie_id) {
     )
     .then(film => film.data.cast);
 }
-
-// export function fetchSearchFilm(valueInput) {
-//   return axios.get`${BASE_URL}/3/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&query=${valueInput}&page=1`.then(
-//     film => film.data.result,
-//   );
-// }
 
 export function fetchSearchFilm(searchMovie) {
   return axios

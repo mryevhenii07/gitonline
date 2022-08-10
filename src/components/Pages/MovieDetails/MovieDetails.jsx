@@ -5,6 +5,8 @@ import { fetchInfoFilm } from '../../../services/movie-api';
 import SideBar from '../../Sidebar/SideBar';
 import RatingDetails from './RatingDetails/RatingDetails';
 import Video from '../MovieDetails/Video/Video';
+import WhichWatchFilm from './WhichWatchFilm/WhichWatchFilm';
+import Comments from './Comments/Comments';
 
 import s from './MovieDetails.module.css';
 
@@ -27,7 +29,7 @@ const MovieDetails = () => {
               <img
                 src={`${IMAGE}${film.poster_path}`}
                 alt={film.tagline}
-                width="400"
+                width="350"
                 height="560"
               />
               <div className={s.blockRi}>
@@ -81,10 +83,9 @@ const MovieDetails = () => {
                 rating={film.vote_average}
               />
             </div>
-            <Video />
-            {/* <div style={{ color: 'white' }}>
-            <div>jjjjjjjjjjjjjj</div>{' '}
-          </div> */}
+            <Video originalTitle={film.original_title} title={film.title} />
+            <WhichWatchFilm />
+            <Comments />
           </div>
           <SideBar />
         </li>

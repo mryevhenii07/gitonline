@@ -1,13 +1,14 @@
 import React from 'react';
 
 import ReactPaginate from 'react-paginate';
-// import styles from './Pagination.module.css';
+import s from './Pagination.module.css';
 // import '../../App.css';
-import './Pagination.css';
+// import './Pagination.css';
 
 const Pagination = ({ onChangePage }) => {
   return (
     <ReactPaginate
+      className={s}
       breakLabel="..."
       nextLabel=" >"
       onPageChange={e => onChangePage(e.selected + 1)}
@@ -18,6 +19,5 @@ const Pagination = ({ onChangePage }) => {
     />
   );
 };
-const aa = { 11: 'tt' };
 
 export default Pagination;
