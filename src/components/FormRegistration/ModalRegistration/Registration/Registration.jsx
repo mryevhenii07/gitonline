@@ -1,8 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { useForm } from 'react-hook-form';
-
-// import './styles.css';
 
 const Registration = () => {
   const {
@@ -14,9 +11,9 @@ const Registration = () => {
 
   const onSubmit = data => {
     alert(JSON.stringify(data));
-  }; // your form submit function which will invoke after successful validation
+  };
 
-  console.log(watch('example')); // you can watch individual input by pass the name of the input
+  console.log(watch('example'));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

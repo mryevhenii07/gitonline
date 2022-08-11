@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import SearchFilm from '../SearchFilm/SearchFilm';
+import SearchFilm from './SearchFilm/SearchFilm';
 import s from './Navigation.module.css';
 import gidonline from '../../images/gidonline.jpg';
 

@@ -4,11 +4,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-// import {Link} from 'react-router-dom';
-import Login from '../FormRegistration/Login/Login';
-// import Registration from '../FormRegistration/Registration/Registration';
-
-import s from './Modal.module.css';
+import Registration from './Registration/Registration';
+import s from './ModalRegistration.module.css';
 
 const style = {
   position: 'absolute',
@@ -16,7 +13,6 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 600,
-
   bgcolor: '#222222',
   border: '2px solid #222',
   boxShadow: 24,
@@ -29,9 +25,9 @@ const BasicModal = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <>
       <Button onClick={handleOpen}>REGISTRATION</Button>
-      <Button onClick={handleOpen}>LOGIN</Button>
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -40,19 +36,18 @@ const BasicModal = () => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <Login />
-            {/* <Registration /> */}
+            <Registration />
           </Typography>
           <Typography
             id="modal-modal-description"
             sx={{ mt: 2 }}
             className={s.text}
           >
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            Duis mollis, est non .
           </Typography>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 };
 

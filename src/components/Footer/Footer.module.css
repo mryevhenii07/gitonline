@@ -2,28 +2,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 60px;
     background-color: #222222;
+    padding: 15px;
+}
+.gitOnline{
+    color: rgb(200, 194, 187);
+    font-size: 18px;
 }
 
+ .linkGit {
+
+    color: rgb(101, 99, 96);
+}
+
+
+.linkGit:hover{
+    color: rgb(117, 115, 112);
+}
 .wrap__contacts{
     display: flex;
     padding: 0 0;
+    
+}
+.item{
+    margin-right: 10px;
 }
 
-.wrap__contacts > li a {
+ .itemLink{
      color: rgb(101, 99, 96);
-    font-size: 18px;
+    font-size: 20px;
  }
 
- .wrap__contacts > li a:hover{
+ .itemLink:hover{
        color: rgb(200, 194, 187);
 }
 
-.gitOnline{color: rgb(200, 194, 187);
-    font-size: 18px;
-}
-
-.gitOnline  a {
-    color: rgb(101, 99, 96);
-}

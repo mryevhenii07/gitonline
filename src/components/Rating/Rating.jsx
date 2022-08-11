@@ -6,7 +6,6 @@ import s from './Rating.module.css';
 
 const Ratings = ({ star }) => {
   const rating = star.toFixed(1) - 3;
-
   return (
     <Stack spacing={1}>
       <Rating

@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FetchWhichWatchFilm } from '../../../../services/movie-api';
-
 import s from './WhichWatchFilm.module.css';
-
-const IMAGE = 'https://image.tmdb.org/t/p/w500/';
+import imageDefault from '../../../../images/default.jpg';
+import { IMAGE } from '../../../../services/movie-api';
 
 const WhichWatchFilm = () => {
   const [film, setFilm] = useState([]);
@@ -21,7 +20,7 @@ const WhichWatchFilm = () => {
         {film.map(({ id, original_title, poster_path }) => (
           <Link to={`movies/${id}`} key={id} className={s.item}>
             <img
-              src={`${IMAGE}${poster_path}`}
+              src={poster_path ? `${IMAGE}${poster_path}` : imageDefault}
               alt="dd"
               width="195"
               height="320"

@@ -8,6 +8,7 @@ import {
   FaTiktok,
   FaViber,
 } from 'react-icons/fa';
+
 import s from './Video.module.css';
 
 const Video = ({ title, originalTitle }) => {

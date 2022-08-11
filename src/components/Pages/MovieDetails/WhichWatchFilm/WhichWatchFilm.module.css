@@ -35,6 +35,10 @@ height: 384px;
 
 
 .title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: center;
     text-align: center;
 color: #b3b3b3;
 font-weight: bold;

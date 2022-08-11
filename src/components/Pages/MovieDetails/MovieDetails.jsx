@@ -7,10 +7,9 @@ import RatingDetails from './RatingDetails/RatingDetails';
 import Video from '../MovieDetails/Video/Video';
 import WhichWatchFilm from './WhichWatchFilm/WhichWatchFilm';
 import Comments from './Comments/Comments';
-
+import imageDefault from '../../../images/default.jpg';
 import s from './MovieDetails.module.css';
-
-const IMAGE = 'https://image.tmdb.org/t/p/w500/';
+import { IMAGE } from '../../../services/movie-api';
 
 const MovieDetails = () => {
   const [film, setFilm] = useState('');
@@ -27,7 +26,11 @@ const MovieDetails = () => {
           <div>
             <div className={s.wrapBlock}>
               <img
-                src={`${IMAGE}${film.poster_path}`}
+                src={
+                  film.poster_path
+                    ? `${IMAGE}${film.poster_path}`
+                    : imageDefault
+                }
                 alt={film.tagline}
                 width="350"
                 height="560"

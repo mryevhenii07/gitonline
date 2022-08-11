@@ -6,17 +6,26 @@ const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className={s.gitOnline}>
-        GitOnline - <a href="#">your git to the world of cinema </a>
+        GitOnline -
+        <a href="#" className={s.linkGit}>
+          your git to the world of cinema
+        </a>
       </div>
       <ul className={s.wrap__contacts}>
-        <li>
-          <a href="#">User</a>
+        <li className={s.item}>
+          <a href="#" className={s.itemLink}>
+            User
+          </a>
         </li>
-        <li>
-          <a href="#">Ownership</a>
+        <li className={s.item}>
+          <a href="#" className={s.itemLink}>
+            Ownership
+          </a>
         </li>
-        <li>
-          <a href="#">Contacts</a>
+        <li className={s.item}>
+          <a href="#" className={s.itemLink}>
+            Contacts
+          </a>
         </li>
       </ul>
     </footer>

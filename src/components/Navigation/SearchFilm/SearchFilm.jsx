@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 
-import { SearchContext } from '../../App';
+import { SearchContext } from '../../../App';
 import s from './SearchFilm.module.css';
 
 const SearchFilm = () => {
   const [query, setQuery] = useState('');
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const { setSearchValue } = useContext(SearchContext);
 
   const reset = () => {
     setQuery('');

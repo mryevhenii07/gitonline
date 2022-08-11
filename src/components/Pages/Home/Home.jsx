@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Fuse from 'fuse.js';
 
 import { fetchTrending, fetchSearchFilm } from '../../../services/movie-api';
 import Pagination from '../../Pagination/Pagination';
@@ -7,8 +8,8 @@ import s from './Home.module.css';
 import SideBar from '../../Sidebar/SideBar';
 import Ratings from '../../Rating/Rating';
 import { SearchContext } from '../../../App';
-import Fuse from 'fuse.js';
-const IMAGE = 'https://image.tmdb.org/t/p/w500/';
+import imageDefault from '../../../images/default.jpg';
+import { IMAGE } from '../../../services/movie-api';
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,8 +39,6 @@ const Home = () => {
   const characterResults = searchValue
     ? results.map(result => result.item)
     : trends;
-  // console.log('results', results);
-  // console.log('trends', trends);
   return (
     <div>
       <div className={s.wrap}>
@@ -54,13 +53,12 @@ const Home = () => {
             }) => (
               <Link to={`movies/${id}`} key={id} className={s.item}>
                 <img
-                  src={`${IMAGE}${poster_path}`}
+                  src={poster_path ? `${IMAGE}${poster_path}` : imageDefault}
                   alt="dd"
                   width="100%"
                   height="405"
                 />
                 <h4 className={s.title}>{original_title}</h4>
-
                 <div className={s.wrap__info}>
                   <p>
                     <Ratings star={vote_average} />

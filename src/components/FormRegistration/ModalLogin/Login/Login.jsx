@@ -13,7 +13,7 @@ const Login = () => {
 
   const onSubmit = data => {
     console.log(data);
-  }; // your form submit function which will invoke after successful validation
+  };
 
   console.log(watch('example'));
 
@@ -36,7 +36,6 @@ const Login = () => {
       <button type="submit" className={s.btnSubmit}>
         Login
       </button>
-      {/* <input type="submit" /> */}
     </form>
   );
 };

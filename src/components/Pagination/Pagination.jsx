@@ -1,9 +1,7 @@
 import React from 'react';
-
 import ReactPaginate from 'react-paginate';
+
 import s from './Pagination.module.css';
-// import '../../App.css';
-// import './Pagination.css';
 
 const Pagination = ({ onChangePage }) => {
   return (
@@ -13,9 +11,15 @@ const Pagination = ({ onChangePage }) => {
       nextLabel=" >"
       onPageChange={e => onChangePage(e.selected + 1)}
       pageRangeDisplayed={20}
-      pageCount={5}
+      pageCount={7}
       previousLabel="< "
       renderOnZeroPageCount={null}
+      className={s.pagination}
+      pageLinkClassName={s.pageLink}
+      pageClassName={s.item}
+      activeLinkClassName={s.activeLink}
+      nextLinkClassName={s.nextLink}
+      previousLinkClassName={s.previousLink}
     />
   );
 };
