@@ -5,26 +5,23 @@ import s from './Comments.module.css';
 import imagesDefaultComment from '../../../../images/default-com.jpg';
 
 const Comments = () => {
-  const [todoComment, setTodoComment] = useState([
-    { name: 'ghghg', text: 'shdjdsj' },
-  ]);
+  const [todoComment, setTodoComment] = useState([]);
   const {
     register,
+
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = data => {
-    console.log(data); // {name:"ghghg", text:"shdjdsj"}
+    setTodoComment((prevState = []) => {
+      return [...prevState, data];
+    });
 
-    setTodoComment([data]); // [{name:"ghghg", text:"shdjdsj"}]
-
-    setTodoComment(prevState => prevState.push(data)); //error
+    reset();
   };
-  console.log(todoComment);
-
-  // console.log(watch('name'));
 
   return (
     <div className={s.wrapForm}>
@@ -34,34 +31,32 @@ const Comments = () => {
           <input
             placeholder="Your name..."
             type="text"
-            {...register('name')}
+            {...register('name', { required: true })}
             className={s.input}
           />
         </label>
         <br />
         <textarea
-          wrap="hard"
           className={s.textarea}
-          name=""
-          id=""
           maxLength="200"
           placeholder="Write comment..."
           required
           {...register('text')}
-          defaultValue="ффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф"
         ></textarea>
 
         {errors.exampleRequired && <span>This field is required</span>}
-        <button className={s.clear}>Clear</button>
+        <button className={s.clear} onClick={() => reset({ text: '' })}>
+          Clear
+        </button>
         <button type="submit" className={s.button}>
           Submit
         </button>
       </form>
 
-      <ul className={s.todoWrap}>
-        {todoComment.map(todo => (
-          <li>
-            <p className={s.name}>{todo.name}</p>
+      <ul>
+        {todoComment.map(({ name, text }) => (
+          <li className={s.todoWrap}>
+            <p className={s.name}>{name}</p>
             <div className={s.wrapImgText}>
               <img
                 className={s.img}
@@ -70,7 +65,9 @@ const Comments = () => {
                 width="100"
                 height="110"
               />
-              <div className={s.text}> {todo.text}</div>
+              <div>
+                <p className={s.text}> {text}</p>
+              </div>
             </div>
           </li>
         ))}
