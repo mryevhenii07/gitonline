@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/Pages/NotFoundView/NotFoundView.jsx"],"names":["NotFoundView"],"mappings":"wGAAA,uBAMeA,UAJM,WACnB,OAAO","file":"static/js/notFoundView.48c83714.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst NotFoundView = () => {\r\n  return <div>NotFounView</div>;\r\n};\r\n\r\nexport default NotFoundView;\r\n"],"sourceRoot":""}
