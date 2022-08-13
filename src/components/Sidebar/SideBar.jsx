@@ -6,8 +6,8 @@ import {
   fetchSidebarSerials,
 } from '../../services/movie-api';
 import s from './SideBar.module.css';
-import ModalLogin from '../FormRegistration/ModalLogin/ModalLogin';
-import ModalRegistration from '../FormRegistration/ModalRegistration/ModalRegistration';
+// import ModalLogin from '../FormRegistration/ModalLogin/ModalLogin';
+// import ModalRegistration from '../FormRegistration/ModalRegistration/ModalRegistration';
 import imageDefault from '../../images/default.jpg';
 import { IMAGE } from '../../services/movie-api';
 
@@ -25,8 +25,10 @@ const SideBar = () => {
   return (
     <div className={s.wrapWrap}>
       <div className={s.wrapRegistration}>
-        <ModalLogin className={s.login} />
-        <ModalRegistration className={s.registration} />
+        {/* <ModalLogin className={s.login} />
+        <ModalRegistration className={s.registration} /> */}
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
       </div>
       <h3 className={s.featuredMovies}>
         Featured Movies <span className={s.arrow}>&#10148;</span>

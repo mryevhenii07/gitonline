@@ -6,6 +6,7 @@ import imagesDefaultComment from '../../../../images/default-com.jpg';
 
 const Comments = () => {
   const [todoComment, setTodoComment] = useState([]);
+  const [maxLetters, setMaxLetters] = useState(200);
   const {
     register,
 

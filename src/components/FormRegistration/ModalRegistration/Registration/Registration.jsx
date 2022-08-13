@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+import s from './Registration.module.css';
+
 const Registration = () => {
   const {
     register,
@@ -16,11 +18,11 @@ const Registration = () => {
   console.log(watch('example'));
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
       <label>
-        First Name
+        Login
         <input
-          {...register('firstName', {
+          {...register('Login', {
             required: true,
             maxLength: 20,
             pattern: /^[A-Za-z]+$/i,
@@ -37,19 +39,19 @@ const Registration = () => {
         )}
       </label>
       <label>
-        Laste Name
-        <input {...register('lastName', { pattern: /^[A-Za-z]+$/i })} />
+        Email
+        <input {...register('Email', { pattern: /^[A-Za-z]+$/i })} />
         {errors?.lastName?.type === 'pattern' && (
           <p>Alphabetical characters only</p>
         )}
       </label>
-      <label>
+      {/* <label>
         Email
         <input {...register('email')} />
         {errors.email && (
           <p>You Must be older then 18 and younger then 99 years old</p>
         )}
-      </label>
+      </label> */}
       <label>
         Password
         <input {...register('Password')} />
