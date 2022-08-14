@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SingUp from '../../components/SingUp';
+
 const RegisterPage = () => {
   return (
     <div>
-      <h2>Register</h2>
+      <h1>RegisterPage</h1>
+      <SingUp />
 
       <p>
-        Already have an account? <Link to="/login">Sing in</Link>
+        already have an account <Link to="/login">Login</Link>
       </p>
     </div>
   );

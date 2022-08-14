@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../../components/Login';
 
 const LoginPage = () => {
   return (
     <div>
-      <h2>Login</h2>
+      <h1>Login</h1>
+      <Login />
       <p>
-        Or <Link to="/register"> register</Link>
+        Or <Link to="/register">Register</Link>
       </p>
     </div>
   );

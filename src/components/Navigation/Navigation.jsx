@@ -1,11 +1,17 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import SearchFilm from './SearchFilm/SearchFilm';
 import s from './Navigation.module.css';
 import gidonline from '../../images/gidonline.jpg';
 
+import { useAuth } from '../../hooks/use-auth';
+import { removeUser } from '../../store/slices/userSlice';
+
 const Navigation = () => {
+  const { email } = useAuth();
+  const dispatch = useDispatch();
   return (
     <div>
       <h1 className={s.gidOnline}>Git Online</h1>
@@ -67,6 +73,12 @@ const Navigation = () => {
               </NavLink>
             </li>
           </ul>
+        </div>
+        <div className={s.login}>
+          {' '}
+          <button onClick={() => dispatch(removeUser())}>
+            Logout from {email}
+          </button>
         </div>
       </header>
     </div>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { fetchTrendingWeek } from '../../../services/movie-api';
+import { fetchTrendingWeek } from '../../services/movie-api';
 import s from './TrendingDay.module.css';
-import imageDefault from '../../../images/default.jpg';
-import { IMAGE } from '../../../services/movie-api';
+import imageDefault from '../../images/default.jpg';
+import { IMAGE } from '../../services/movie-api';
 
 const TrendingDay = () => {
   const [trends, setTrends] = useState([]);

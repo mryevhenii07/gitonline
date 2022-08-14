@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchCast } from '../../../services/movie-api';
-import imgDefault from '../../../images/default.jpg';
-import { IMAGE } from '../../../services/movie-api';
+// import { fetchCast } from '../../services/movie-api';
+// import imgDefault from '../../../images/default.jpg';
+// import { IMAGE } from '../../services/movie-api';
+
+import { fetchCast } from '../../services/movie-api';
+import imgDefault from '../../images/default.jpg';
+import { IMAGE } from '../../services/movie-api';
 
 const Cast = () => {
   const [actors, setActors] = useState([]);

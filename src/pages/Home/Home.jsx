@@ -1,22 +1,33 @@
 import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Fuse from 'fuse.js';
+// import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { fetchTrending, fetchSearchFilm } from '../../../services/movie-api';
-import Pagination from '../../Pagination/Pagination';
+import { fetchTrending, fetchSearchFilm } from '../../services/movie-api';
+import Pagination from '../../components/Pagination/Pagination';
 import s from './Home.module.css';
-import SideBar from '../../Sidebar/SideBar';
-import Ratings from '../../Rating/Rating';
-import { SearchContext } from '../../../App';
-import imageDefault from '../../../images/default.jpg';
-import { IMAGE } from '../../../services/movie-api';
+import SideBar from '../../components/Sidebar/SideBar';
+import Ratings from '../../components/Rating/Rating';
+import { SearchContext } from '../../App';
+import imageDefault from '../../images/default.jpg';
+import { IMAGE } from '../../services/movie-api';
+
+import { useAuth } from '../../hooks/use-auth';
+// import { removeUser } from '../../store/slices/userSlice';
 
 const Home = () => {
+  const { isAuth } = useAuth();
+
+  let navigation = useNavigate();
+
   const [currentPage, setCurrentPage] = useState(1);
   const [trends, setTrends] = useState([]);
   const [query, setQuery] = useState([]);
 
   const { searchValue } = useContext(SearchContext);
+
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     fetchSearchFilm(searchValue).then(setQuery);
@@ -39,9 +50,12 @@ const Home = () => {
   const characterResults = searchValue
     ? results.map(result => result.item)
     : trends;
-  return (
+  return isAuth ? (
     <div>
       <div className={s.wrap}>
+        {/* <button onClick={() => dispatch(removeUser())}>
+          Logout from {email}
+        </button> */}
         <ul className={s.list}>
           {characterResults.map(
             ({
@@ -75,6 +89,8 @@ const Home = () => {
       </div>
       <Pagination onChangePage={number => setCurrentPage(number)} />
     </div>
+  ) : (
+    <div>{navigation('/login')}</div>
   );
 };
 

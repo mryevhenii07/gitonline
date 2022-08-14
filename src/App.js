@@ -1,25 +1,36 @@
 import { useState, createContext } from 'react';
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
+// import { Provider } from 'react-redux';
 import 'normalize.css';
 
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import TrendingDay from './components/Pages/TrendingDay/TrendingDay';
+import TrendingDay from './pages/TrendingDay/TrendingDay';
 import Genres from './components/Genres/Genres';
 import Footer from './components/Footer/Footer';
-import LoginPage from './components/Pages/LoginPage/LoginPage';
-import RegisterPage from './components/Pages/RegisterPage/RegisterPage';
+import { useAuth } from './hooks/use-auth';
+
+// import LoginPage from './pages/LoginPage/LoginPage';
+// import RegisterPage from './pages/RegisterPage/RegisterPage';
+// import FormLogin from './components/Form/FormLogin/FormLogin';
+// import RegisterForm from './components/Form/RegisterForm/RegisterForm';
 
 const Home = lazy(() =>
-  import('./components/Pages/Home/Home' /* webpackChunkName:"home" */),
+  import('./pages/Home/Home' /* webpackChunkName:"home" */),
+);
+const LoginPage = lazy(() =>
+  import('./pages/LoginPage/LoginPage' /* webpackChunkName:"home" */),
+);
+const RegisterPage = lazy(() =>
+  import('./pages/RegisterPage/RegisterPage' /* webpackChunkName:"home" */),
 );
 const Movies = lazy(() =>
-  import('./components/Pages/Movies/Movies' /* webpackChunkName:"home" */),
+  import('./pages/Movies/Movies' /* webpackChunkName:"home" */),
 );
 const NotFoundView = lazy(() =>
   import(
-    './components/Pages/NotFoundView/NotFoundView' /* webpackChunkName:"notFoundView" */
+    './pages/NotFoundView/NotFoundView' /* webpackChunkName:"notFoundView" */
   ),
 );
 const MovieDetails = lazy(() =>
@@ -28,10 +39,10 @@ const MovieDetails = lazy(() =>
   ),
 );
 const Cast = lazy(() =>
-  import('./components/Pages/Cast/Cast' /* webpackChunkName:"cast" */),
+  import('./pages/Cast/Cast' /* webpackChunkName:"cast" */),
 );
 const Reviews = lazy(() =>
-  import('./components/Pages/Reviews/Reviews' /* webpackChunkName:"reviews" */),
+  import('./pages/Reviews/Reviews' /* webpackChunkName:"reviews" */),
 );
 
 export const SearchContext = createContext('');
@@ -39,26 +50,33 @@ export const SearchContext = createContext('');
 const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
+  const { isAuth } = useAuth();
+
   return (
     <div style={{ width: 1200, margin: ' 0 auto' }}>
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
-        <Navigation />
-        <TrendingDay />
-        <Genres />
+        {isAuth && <Navigation />}
+        {isAuth && <TrendingDay />}
+        {isAuth && <Genres />}
+
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+
+            {/* <Route path="login" element={<FormLogin />} />
+            <Route path="register" element={<RegisterForm />} /> */}
             <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
             <Route path="movies/:movieId/cast" element={<Cast />} />
             <Route path="movies/:movieId/reviews" element={<Reviews />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/login" replace />} />
             {/* <Route path="*" element={<NotFoundView />} /> */}
           </Routes>
         </Suspense>
-        <Footer />
+
+        {isAuth && <Footer />}
       </SearchContext.Provider>
     </div>
   );
