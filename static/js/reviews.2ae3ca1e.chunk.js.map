@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/Reviews/Reviews.jsx"],"names":["Reviews"],"mappings":"wGAAA,uBAMeA,UAJC,WACd,OAAO","file":"static/js/reviews.2ae3ca1e.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst Reviews = () => {\r\n  return <div>Reviews</div>;\r\n};\r\n\r\nexport default Reviews;\r\n"],"sourceRoot":""}

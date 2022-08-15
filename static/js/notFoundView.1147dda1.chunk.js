@@ -1,2 +1,0 @@
-(this.webpackJsonpgitonline=this.webpackJsonpgitonline||[]).push([[5],{147:function(n,i,t){"use strict";t.r(i);t(0);var e=t(1);i.default=function(){return Object(e.jsx)("div",{children:"NotFounView"})}}}]);
-//# sourceMappingURL=notFoundView.1147dda1.chunk.js.map
