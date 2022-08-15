@@ -1,0 +1,27 @@
+.form{
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 100px auto;
+    width: 400px;
+    height: 400px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgb(235, 242, 242);
+    
+}
+
+.title{
+    display: flex;align-items: center;
+    text-align: center;
+    
+}
+.wrapCheckButtonReg{width: 100%;}
+
+.checkbox{margin-left: 20px; font-size: 11px;margin-top: 20px;}
+.checkboxSpan{text-decoration:underline; }
+.formLink{color: rgb(24, 129, 226);}
+.wrapBtn{width: 100%; display: flex;justify-content: center;margin-top: 5px;}
+.wrapLinkRegister{margin-left: 20px;margin-top: 10px;}
+.registerLink{color: rgb(24, 129, 226);}
