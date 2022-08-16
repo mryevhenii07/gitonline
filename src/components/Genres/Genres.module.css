@@ -1,4 +1,9 @@
+.wrap
+{margin-top: -2px;
+margin-bottom: -2px;}
+
 .tr{
+    
     width: 1200px;
     display: flex;
     justify-content: space-between;

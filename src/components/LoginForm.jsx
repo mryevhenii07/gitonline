@@ -26,9 +26,9 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+    reset,
+    formState: { errors, isValid },
+  } = useForm({ mode: 'onBlur' });
   const onSubmit = ({ email, password }) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -44,12 +44,10 @@ const Form = () => {
         navigate('/');
       })
       .catch(console.error);
+    reset();
   };
 
-  // console.log(watch('example'));
-
   return (
-    // <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
     <Box
       onSubmit={handleSubmit(onSubmit)}
       className={s.form}
@@ -62,23 +60,47 @@ const Form = () => {
     >
       <h1 className={s.title}>Login</h1>
       <div>
-        <TextField
-          {...register('email', { required: true })}
-          type="text"
-          id="standard-helperText"
-          label="Email"
-          // defaultValue="Default Value"
-          // helperText="Some important text"
-          variant="standard"
-        />
-        <TextField
-          {...register('password', { required: true })}
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          variant="standard"
-        />
+        <label htmlFor="" className={s.label}>
+          <TextField
+            {...register('email', {
+              required: 'Required field',
+              minLength: { value: 7, message: ' Minimum 7 characters' },
+              maxLength: { value: 26, message: 'Maximum 26 characters' },
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Invalid email address',
+              },
+            })}
+            type="text"
+            id="standard-helperText"
+            label="Email"
+            variant="standard"
+          />
+          <div className={s.wrapError}>
+            {errors?.email && (
+              <p className={s.error}>{errors?.email?.message || 'Error!'}</p>
+            )}
+          </div>
+        </label>
+        <label htmlFor="">
+          <TextField
+            {...register('password', {
+              required: 'Required field',
+              minLength: { value: 5, message: 'Minimum 5 characters' },
+              maxLength: { value: 20, message: 'Maximum 20  characters' },
+            })}
+            id="standard-password-input"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            variant="standard"
+          />
+          <div className={s.wrapError}>
+            {errors?.password && (
+              <p className={s.error}>{errors?.password?.message || 'Error!'}</p>
+            )}
+          </div>
+        </label>
       </div>
       <div className={s.wrapCheckButtonReg}>
         <div className={s.checkbox}>
@@ -98,7 +120,7 @@ const Form = () => {
         </div>
 
         <Stack spacing={2} direction="row" className={s.wrapBtn}>
-          <Button type="submit" variant="contained">
+          <Button type="submit" variant="contained" disabled={!isValid}>
             Sing In
           </Button>
         </Stack>
@@ -113,98 +135,3 @@ const Form = () => {
   );
 };
 export default Form;
-// // import React from 'react';
-// import { useForm } from 'react-hook-form';
-// import { useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-
-// import { setUser } from '../store/slices/userSlice';
-// import s from './LoginForm/LoginForm.module.css';
-
-// import * as React from 'react';
-// import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-
-// const Form = () => {
-//   let navigate = useNavigate();
-//   const dispatch = useDispatch();
-
-//   const {
-//     register,
-//     handleSubmit,
-//     watch,
-//     formState: { errors },
-//   } = useForm();
-//   const onSubmit = ({ email, password }) => {
-//     console.log(email);
-//     console.log(password);
-//     const auth = getAuth();
-//     signInWithEmailAndPassword(auth, email, password)
-//       .then(({ user }) => {
-//         console.log(user);
-//         dispatch(
-//           setUser({
-//             email: user.email,
-//             id: user.uid,
-//             token: user.accessToken,
-//           }),
-//         );
-//         navigate('/');
-//       })
-//       .catch(console.error);
-//   };
-
-//   // console.log(watch('example'));
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-//       <h1 className={s.title}>Login</h1>
-//       {/* <Box
-//         // onSubmit={handleSubmit(onSubmit)}
-//         className={s.form}
-//         component="form"
-//         sx={{
-//           '& .MuiTextField-root': { m: 1, width: '25ch' },
-//         }}
-//         noValidate
-//         autoComplete="off"
-//       >
-//         <div>
-//           <TextField
-//             {...register('email', { required: true })}
-//             type="text"
-//             id="standard-helperText"
-//             label="Email"
-//             // defaultValue="Default Value"
-//             // helperText="Some important text"
-//             variant="standard"
-//           />
-//           <TextField
-//             {...register('password', { required: true })}
-//             id="standard-password-input"
-//             label="Password"
-//             type="password"
-//             autoComplete="current-password"
-//             variant="standard"
-//           />
-//         </div>
-//       </Box> */}
-
-//       <input type="text" {...register('email', { required: true })} />
-
-//       <input type="password" {...register('password', { required: true })} />
-
-//       {/* <input type="submit" /> */}
-//       <Stack spacing={2} direction="row">
-//         <Button type="submit" variant="contained">
-//           Sing In
-//         </Button>
-//       </Stack>
-//     </form>
-//   );
-// };
-// export default Form;

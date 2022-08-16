@@ -1,4 +1,5 @@
 .wrapWrap{
+    margin-top: -4px;
 padding: 5px;
 width: 330px;
 background-color: #222222;
@@ -26,19 +27,24 @@ background-color: #222222;
 }
 .itemFilm{
     max-width: 150px;
-   height: 255px;
+   height: 264px;
     cursor: pointer;
 }
 .itemFilm:hover{
     border: 3px solid rgb(131, 129, 129); 
     }
 .titleFilm{
-    font-size: 15px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px;
-background-color: #222222;
-color: #a9a5a5;
-text-align: center;
+    height: 22px;
+    background-color: #222222;
+    color: #a9a5a5;
+    text-align: center;
+  
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
+

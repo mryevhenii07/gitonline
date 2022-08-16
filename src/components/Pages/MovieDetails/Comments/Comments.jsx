@@ -7,7 +7,7 @@ import imagesDefaultComment from '../../../../images/default-com.jpg';
 import { useAuth } from '../../../../hooks/use-auth';
 
 const Comments = () => {
-  const { email } = useAuth();
+  const { nickName } = useAuth();
 
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
@@ -59,9 +59,9 @@ const Comments = () => {
       </form>
 
       <ul>
-        {todoComment.map(({ name, text }) => (
-          <li className={s.todoWrap}>
-            <p className={s.name}>{email}</p>
+        {todoComment.map(({ name, text }, ind) => (
+          <li className={s.todoWrap} key={ind}>
+            <p className={s.name}>{nickName}</p>
             <div className={s.wrapImgText}>
               <img
                 className={s.img}

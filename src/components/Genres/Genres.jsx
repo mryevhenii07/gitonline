@@ -4,7 +4,7 @@ import s from './Genres.module.css';
 
 const Genres = () => {
   return (
-    <table>
+    <table className={s.wrap}>
       <tbody style={{ color: 'white' }}>
         <tr className={s.tr}>
           <td>WESTERN</td>
