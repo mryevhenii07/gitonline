@@ -51,8 +51,17 @@
 }
 
 .login{    width: 210px;
-    background-color: red;
+  
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.logout{
+    margin-left: 5px;
+    color: rgb(101, 96, 96);
+    font-size: 30px;
+    cursor: pointer;
+}
+.logout:hover{transform: scale(1.2);}
+
+.logoutText{color:  rgb(101, 96, 96);}

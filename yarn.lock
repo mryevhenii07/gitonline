@@ -2057,10 +2057,10 @@
     "@mui/utils" "^5.9.3"
     "prop-types" "^15.8.1"
 
-"@mui/styled-engine@^5.8.7":
-  "integrity" "sha512-tVqtowjbYmiRq+qcqXK731L9eWoL9H8xTRhuTgaDGKdch1zlt4I2UwInUe1w2N9N/u3/jHsFbLcl1Un3uOwpQg=="
-  "resolved" "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.8.7.tgz"
-  "version" "5.8.7"
+"@mui/styled-engine@^5.10.0":
+  "integrity" "sha512-V0MmOx7KBDomDYg2/dRItVsvrpHpd51uZZiNqeuXiZruUJ1vPwtxztpvtSjX/xKvIxN7C0mxf8jmuwVUn6uaEA=="
+  "resolved" "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.10.0.tgz"
+  "version" "5.10.0"
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@emotion/cache" "^11.9.3"
@@ -2068,13 +2068,13 @@
     "prop-types" "^15.8.1"
 
 "@mui/system@^5.9.3":
-  "integrity" "sha512-EXQV2POwncstHLYII+G4VSYdEFun1TjBbQSBDK76DbIkug8nPjtjAZ+3Kgk3/NoFIigW+vQ9cDVUZtlbRH6YMQ=="
-  "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.9.3.tgz"
-  "version" "5.9.3"
+  "integrity" "sha512-HNu3LdA+37cWqgJBEhOF4F5LX4WVmvg6SoHRfajRO0neKXLdooibMP3W1bhSd27QcPxyMUmvY9/Dlp9znDeCRw=="
+  "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.10.0.tgz"
+  "version" "5.10.0"
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@mui/private-theming" "^5.9.3"
-    "@mui/styled-engine" "^5.8.7"
+    "@mui/styled-engine" "^5.10.0"
     "@mui/types" "^7.1.5"
     "@mui/utils" "^5.9.3"
     "clsx" "^1.2.1"

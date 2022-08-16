@@ -2,6 +2,9 @@ import * as React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+// import { BiLogOut } from 'react-icons/bi';
+import { BsBoxArrowInRight } from 'react-icons/bs';
+
 import SearchFilm from './SearchFilm/SearchFilm';
 import s from './Navigation.module.css';
 import gidonline from '../../images/gidonline.jpg';
@@ -75,10 +78,14 @@ const Navigation = () => {
           </ul>
         </div>
         <div className={s.login}>
-          {' '}
-          <button onClick={() => dispatch(removeUser())}>
+          <span className={s.logoutText}>LogOut</span>
+          <BsBoxArrowInRight
+            className={s.logout}
+            onClick={() => dispatch(removeUser())}
+          />
+          {/* <button onClick={() => dispatch(removeUser())}>
             Logout from {email}
-          </button>
+          </button> */}
         </div>
       </header>
     </div>

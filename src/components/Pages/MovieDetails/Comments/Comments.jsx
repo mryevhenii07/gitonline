@@ -4,7 +4,11 @@ import { useForm } from 'react-hook-form';
 import s from './Comments.module.css';
 import imagesDefaultComment from '../../../../images/default-com.jpg';
 
+import { useAuth } from '../../../../hooks/use-auth';
+
 const Comments = () => {
+  const { email } = useAuth();
+
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
   const {
@@ -57,7 +61,7 @@ const Comments = () => {
       <ul>
         {todoComment.map(({ name, text }) => (
           <li className={s.todoWrap}>
-            <p className={s.name}>{name}</p>
+            <p className={s.name}>{email}</p>
             <div className={s.wrapImgText}>
               <img
                 className={s.img}
@@ -67,6 +71,7 @@ const Comments = () => {
                 height="110"
               />
               <div>
+                <p className={s.text}> {name}</p>
                 <p className={s.text}> {text}</p>
               </div>
             </div>

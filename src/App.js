@@ -1,7 +1,7 @@
 import { useState, createContext } from 'react';
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import { Provider } from 'react-redux';
+
 import 'normalize.css';
 
 import './App.css';
@@ -10,11 +10,6 @@ import TrendingDay from './pages/TrendingDay/TrendingDay';
 import Genres from './components/Genres/Genres';
 import Footer from './components/Footer/Footer';
 import { useAuth } from './hooks/use-auth';
-
-// import LoginPage from './pages/LoginPage/LoginPage';
-// import RegisterPage from './pages/RegisterPage/RegisterPage';
-// import FormLogin from './components/Form/FormLogin/FormLogin';
-// import RegisterForm from './components/Form/RegisterForm/RegisterForm';
 
 const Home = lazy(() =>
   import('./pages/Home/Home' /* webpackChunkName:"home" */),
@@ -51,6 +46,8 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const { isAuth } = useAuth();
+  const aaa = useAuth();
+  console.log(aaa);
 
   return (
     <div style={{ width: 1200, margin: ' 0 auto' }}>
