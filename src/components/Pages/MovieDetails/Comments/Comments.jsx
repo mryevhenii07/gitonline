@@ -3,19 +3,16 @@ import { useForm } from 'react-hook-form';
 
 import s from './Comments.module.css';
 import imagesDefaultComment from '../../../../images/default-com.jpg';
-
 import { useAuth } from '../../../../hooks/use-auth';
 
 const Comments = () => {
   const { nickName } = useAuth();
-
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
+
   const {
     register,
-
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();

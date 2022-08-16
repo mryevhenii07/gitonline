@@ -9,6 +9,8 @@ import { fetchCast } from '../../services/movie-api';
 import imgDefault from '../../images/default.jpg';
 import { IMAGE } from '../../services/movie-api';
 
+import s from './Cast.module.css';
+
 const Cast = () => {
   const [actors, setActors] = useState([]);
   const { movieId } = useParams();
@@ -18,15 +20,16 @@ const Cast = () => {
   }, [movieId]);
   console.log(actors);
   return (
-    <ul>
+    <ul className={s.list}>
       {actors.map(({ id, name, profile_path }) => (
-        <li key={id}>
+        <li key={id} className={s.item}>
           <img
             src={profile_path ? `${IMAGE}${profile_path}` : imgDefault}
             alt=""
-            width="200"
+            width="220"
+            height="315"
           />
-          <h3>{name}</h3>
+          <h3 className={s.name}>{name}</h3>
         </li>
       ))}
     </ul>

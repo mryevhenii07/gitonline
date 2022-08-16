@@ -75,11 +75,6 @@ const MovieDetails = () => {
                     Cast
                   </Link>
                 </div>
-                <div>
-                  <Link to={`/movies/${movieId}/reviews`} className={s.reviews}>
-                    Reviews
-                  </Link>
-                </div>
               </div>
               <RatingDetails
                 votes={film.vote_count}

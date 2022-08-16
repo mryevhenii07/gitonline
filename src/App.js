@@ -3,8 +3,8 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
 import 'normalize.css';
-
 import './App.css';
+
 import Navigation from './components/Navigation/Navigation';
 import TrendingDay from './pages/TrendingDay/TrendingDay';
 import Genres from './components/Genres/Genres';
@@ -36,9 +36,6 @@ const MovieDetails = lazy(() =>
 const Cast = lazy(() =>
   import('./pages/Cast/Cast' /* webpackChunkName:"cast" */),
 );
-const Reviews = lazy(() =>
-  import('./pages/Reviews/Reviews' /* webpackChunkName:"reviews" */),
-);
 
 export const SearchContext = createContext('');
 
@@ -55,24 +52,17 @@ const App = () => {
         {isAuth && <Navigation />}
         {isAuth && <TrendingDay />}
         {isAuth && <Genres />}
-
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-
-            {/* <Route path="login" element={<FormLogin />} />
-            <Route path="register" element={<RegisterForm />} /> */}
             <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
             <Route path="movies/:movieId/cast" element={<Cast />} />
-            <Route path="movies/:movieId/reviews" element={<Reviews />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
-            {/* <Route path="*" element={<NotFoundView />} /> */}
           </Routes>
         </Suspense>
-
         {isAuth && <Footer />}
       </SearchContext.Provider>
     </div>
