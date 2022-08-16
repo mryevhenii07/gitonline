@@ -1,2 +1,0 @@
-(this.webpackJsonpgitonline=this.webpackJsonpgitonline||[]).push([[6],{220:function(i,n,e){"use strict";e.r(n);e(0);var t=e(1);n.default=function(){return Object(t.jsx)("div",{children:"Reviews"})}}}]);
-//# sourceMappingURL=reviews.69b9de93.chunk.js.map
