@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 15px;
     margin: 100px auto;
     width: 400px;
     min-height: 400px;
@@ -19,7 +19,7 @@
 }
 .wrapCheckButtonReg{width: 100%;}
 
-.checkbox{margin-left: 20px; font-size: 11px;margin-top: 20px;}
+.checkbox{margin-left: 5px; font-size: 11px;margin-top: 20px;}
 .checkboxSpan{text-decoration:underline; }
 .formLink{color: rgb(24, 129, 226);}
 .wrapBtn{width: 100%; display: flex;justify-content: center;margin-top: 5px;}
@@ -36,3 +36,32 @@
 .error{
     margin-left: 15px;
     font-size: 12px;color: red;}
+
+    .wrapOr{
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40ch;
+      
+    }
+    .lineOr{border-bottom: 1px solid #000;width: 100%;margin-left: 5px;}
+.lineOr:first-child{margin-right: 5px;margin-left: 0;}
+
+    .googleWrap{
+        cursor: pointer;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40ch;
+        height: 50px;
+        border-radius: 20px;
+        border: 1px solid rgb(75, 164, 223);
+        background-color: rgb(246, 244, 244);
+    }
+    .googleText{display: block;margin-left: 10px;}
+    .googleWrap:hover{
+          box-shadow: 0 0 4px 3px rgba(0,0,0,0.6);
+        transition: .3s linear;
+        transform: scale(1.01);}

@@ -1,8 +1,12 @@
-// import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import Notiflix from 'notiflix';
+
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+
 import { Link } from 'react-router-dom';
 
 import { setUser } from '../store/slices/userSlice';
@@ -17,28 +21,44 @@ import TextField from '@mui/material/TextField';
 
 import Checkbox from '@mui/material/Checkbox';
 
+import { FcGoogle } from 'react-icons/fc';
+
 const Form = () => {
+  const [isCheck, setIsCheck] = useState(false);
+
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+  const toCheckbox = () => {
+    setIsCheck(prevState => !prevState);
+  };
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
-  } = useForm({ mode: 'onBlur' });
-  const onSubmit = ({ email, password }) => {
+  } = useForm({ mode: 'onChange' });
+
+  const onSubmit = ({ email, password, checkbox }) => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
+    const user = auth.currentUser;
+
+    console.log(checkbox);
+
+    if (!user) {
+      Notiflix.Notify.warning('You entered an incorrect email or password');
+    }
+
+    signInWithEmailAndPassword(auth, email, password, checkbox)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
             id: user.uid,
             token: user.accessToken,
+            checkbox,
           }),
         );
         navigate('/');
@@ -86,8 +106,12 @@ const Form = () => {
           <TextField
             {...register('password', {
               required: 'Required field',
-              minLength: { value: 5, message: 'Minimum 5 characters' },
-              maxLength: { value: 20, message: 'Maximum 20  characters' },
+              minLength: { value: 6, message: 'Minimum 6 characters' },
+              maxLength: { value: 12, message: 'Maximum 12  characters' },
+              pattern: {
+                value: /^[a-zA-Z0-9@#$%&]{6,12}$/g,
+                message: 'Invalid password!',
+              },
             })}
             id="standard-password-input"
             label="Password"
@@ -104,7 +128,12 @@ const Form = () => {
       </div>
       <div className={s.wrapCheckButtonReg}>
         <div className={s.checkbox}>
-          <Checkbox {...label} />I have read and agree to the
+          <Checkbox
+            {...label}
+            {...register('checkbox')}
+            onChange={toCheckbox}
+          />
+          I have read and agree to the
           <span className={s.checkboxSpan}>
             <a href="#" className={s.formLink}>
               {' '}
@@ -120,10 +149,21 @@ const Form = () => {
         </div>
 
         <Stack spacing={2} direction="row" className={s.wrapBtn}>
-          <Button type="submit" variant="contained" disabled={!isValid}>
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={(!isValid, !isCheck)}
+          >
             Sing In
           </Button>
         </Stack>
+        <div className={s.wrapOr}>
+          <div className={s.lineOr}></div>OR <div className={s.lineOr}></div>
+        </div>
+        <button className={s.googleWrap}>
+          <FcGoogle />{' '}
+          <span className={s.googleText}>Sing in using Google</span>
+        </button>
         <p className={s.wrapLinkRegister}>
           Or{' '}
           <Link className={s.registerLink} to="/register">

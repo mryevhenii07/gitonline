@@ -5,6 +5,7 @@ const initialState = {
   token: null,
   id: null,
   nickName: null,
+  checkbox: null,
 };
 const userSlice = createSlice({
   name: 'user',
@@ -15,12 +16,14 @@ const userSlice = createSlice({
       state.token = action.payload.token;
       state.id = action.payload.id;
       state.nickName = action.payload.nickName;
+      state.checkbox = action.payload.checkbox;
     },
     removeUser(state) {
       state.email = null;
       state.token = null;
       state.id = null;
       state.nickName = null;
+      state.checkbox = null;
     },
   },
 });

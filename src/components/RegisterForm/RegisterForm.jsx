@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -14,30 +15,34 @@ import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 
 const Form = () => {
+  const [isCheck, setIsCheck] = useState(false);
+
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+  const toCheckbox = () => {
+    setIsCheck(prevState => !prevState);
+  };
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
-  } = useForm({ mode: 'onBlur' });
-  const onSubmit = ({ email, password, nickName }) => {
-    console.log(nickName);
+  } = useForm({ mode: 'onChange' });
+  const onSubmit = ({ email, password, nickName, checkbox }) => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password, nickName)
+    createUserWithEmailAndPassword(auth, email, password, nickName, checkbox)
       .then(({ user }) => {
-        console.log(user);
-        console.log(nickName);
         dispatch(
           setUser({
             email: user.email,
             id: user.uid,
             token: user.accessToken,
             nickName: nickName,
+            checkbox,
           }),
         );
         navigate('/');
@@ -103,8 +108,12 @@ const Form = () => {
           <TextField
             {...register('password', {
               required: 'Required field',
-              minLength: { value: 5, message: 'Minimum 5 characters' },
-              maxLength: { value: 20, message: 'Maximum 20 characters' },
+              minLength: { value: 6, message: 'Minimum 6 characters' },
+              maxLength: { value: 12, message: 'Maximum 12 characters' },
+              pattern: {
+                value: /^[a-zA-Z0-9@#$%&]{6,12}$/g,
+                message: 'Invalid password!',
+              },
             })}
             id="standard-password-input"
             label="Password"
@@ -121,7 +130,12 @@ const Form = () => {
       </div>
       <div className={s.wrapCheckButtonReg}>
         <div className={s.checkbox}>
-          <Checkbox {...label} />I have read and agree to the
+          <Checkbox
+            {...label}
+            {...register('checkbox')}
+            onChange={toCheckbox}
+          />
+          I have read and agree to the
           <span className={s.checkboxSpan}>
             <a href="#" className={s.formLink}>
               {' '}
@@ -137,7 +151,11 @@ const Form = () => {
         </div>
 
         <Stack spacing={2} direction="row" className={s.wrapBtn}>
-          <Button type="submit" variant="contained" disabled={!isValid}>
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={(!isValid, !isCheck)}
+          >
             Sing Up
           </Button>
         </Stack>

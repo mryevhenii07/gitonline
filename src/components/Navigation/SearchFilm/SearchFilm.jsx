@@ -34,7 +34,7 @@ const SearchFilm = () => {
           value={query}
         />
       </label>
-      <button type="submit">Search</button>
+      <button className={s.btn} type="submit">Search</button>
     </form>
   );
 };

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FetchWhichWatchFilm } from '../../../../services/movie-api';
+import { FetchWhichWatchFilm } from '../../../services/movie-api';
 import s from './WhichWatchFilm.module.css';
-import imageDefault from '../../../../images/default.jpg';
-import { IMAGE } from '../../../../services/movie-api';
+// import imageDefault from '../../../../images/default.jpg';
+import imageDefault from '../../../images/default.jpg';
+import { IMAGE } from '../../../services/movie-api';
+// import { IMAGE } from '../../../services/movie-api';
 
 const WhichWatchFilm = () => {
   const [film, setFilm] = useState([]);

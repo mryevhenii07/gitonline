@@ -30,7 +30,7 @@ const NotFoundView = lazy(() =>
 );
 const MovieDetails = lazy(() =>
   import(
-    './components/Pages/MovieDetails/MovieDetails' /* webpackChunkName:"movieDetails" */
+    './components/MovieDetails/MovieDetails' /* webpackChunkName:"movieDetails" */
   ),
 );
 const Cast = lazy(() =>
@@ -43,8 +43,6 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const { isAuth } = useAuth();
-  const aaa = useAuth();
-  console.log(aaa);
 
   return (
     <div style={{ width: 1200, margin: ' 0 auto' }}>
@@ -54,13 +52,14 @@ const App = () => {
         {isAuth && <Genres />}
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<Home />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
             <Route path="movies/:movieId/cast" element={<Cast />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
+            {/* <Route path="*" element={<NotFoundView />} /> */}
           </Routes>
         </Suspense>
         {isAuth && <Footer />}

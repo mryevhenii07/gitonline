@@ -14,7 +14,7 @@
 border: 3px solid #323131;
 color: #646a6d;
 }
-button{
+.btn{
 
     width: 100px;
     height: 40px;
@@ -27,7 +27,7 @@ button{
    
 background-color: #222222;}
 
-button:hover{
+.btn:hover{
     background-color: #373737;
     border: 5px solid #373737;
 }

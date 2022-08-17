@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import s from './Comments.module.css';
-import imagesDefaultComment from '../../../../images/default-com.jpg';
-import { useAuth } from '../../../../hooks/use-auth';
+// import imagesDefaultComment from '../../../../images/default-com.jpg';
+import imagesDefaultComment from '../../../images/default-com.jpg';
+import { useAuth } from '../../../hooks/use-auth';
 
 const Comments = () => {
   const { nickName } = useAuth();
