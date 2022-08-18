@@ -7,11 +7,11 @@ import RatingDetails from './RatingDetails/RatingDetails';
 import Video from './Video/Video';
 import WhichWatchFilm from './WhichWatchFilm/WhichWatchFilm';
 import Comments from './Comments/Comments';
-// import imageDefault from '../../../images/default.jpg';
-import imageDefault from '../../images/default.jpg';
+import { useAuth } from '../../hooks/use-auth';
+
 import s from './MovieDetails.module.css';
 import { IMAGE } from '../../services/movie-api';
-import { useAuth } from '../../hooks/use-auth';
+import imageDefault from '../../images/default.jpg';
 
 const MovieDetails = () => {
   const [film, setFilm] = useState('');

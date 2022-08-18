@@ -15,7 +15,6 @@ border: 3px solid #323131;
 color: #646a6d;
 }
 .btn{
-
     width: 100px;
     height: 40px;
     margin-left: 3px;
@@ -24,8 +23,7 @@ color: #646a6d;
     border: 5px solid #222222;
     font-size: 18px;
     color: #758084;
-   
-background-color: #222222;}
+    background-color: #222222;}
 
 .btn:hover{
     background-color: #373737;

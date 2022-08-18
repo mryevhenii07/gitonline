@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import s from './Comments.module.css';
-// import imagesDefaultComment from '../../../../images/default-com.jpg';
 import imagesDefaultComment from '../../../images/default-com.jpg';
-import { useAuth } from '../../../hooks/use-auth';
+import { auth } from '../../../firebase';
 
 const Comments = () => {
-  const { nickName } = useAuth();
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
+
+  const nickName = auth.currentUser.displayName;
 
   const {
     register,
@@ -59,7 +59,7 @@ const Comments = () => {
       <ul>
         {todoComment.map(({ name, text }, ind) => (
           <li className={s.todoWrap} key={ind}>
-            <p className={s.name}>{nickName}</p>
+            <p className={s.name}>NickName: {nickName}</p>
             <div className={s.wrapImgText}>
               <img
                 className={s.img}

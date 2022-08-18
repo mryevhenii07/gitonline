@@ -11,30 +11,27 @@
     font-size: 18px;
 }
 
- .linkGit {
-
+.linkGit {
     color: rgb(101, 99, 96);
 }
-
 
 .linkGit:hover{
     color: rgb(117, 115, 112);
 }
 .wrap__contacts{
     display: flex;
-    padding: 0 0;
-    
+    padding: 0 0;   
 }
 .item{
     margin-right: 10px;
 }
 
- .itemLink{
-     color: rgb(101, 99, 96);
+.itemLink{
+    color: rgb(101, 99, 96);
     font-size: 20px;
- }
+}
 
- .itemLink:hover{
-       color: rgb(200, 194, 187);
+.itemLink:hover{
+    color: rgb(200, 194, 187);
 }
 

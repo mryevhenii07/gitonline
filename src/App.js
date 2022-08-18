@@ -20,9 +20,7 @@ const LoginPage = lazy(() =>
 const RegisterPage = lazy(() =>
   import('./pages/RegisterPage/RegisterPage' /* webpackChunkName:"home" */),
 );
-const Movies = lazy(() =>
-  import('./pages/Movies/Movies' /* webpackChunkName:"home" */),
-);
+
 const NotFoundView = lazy(() =>
   import(
     './pages/NotFoundView/NotFoundView' /* webpackChunkName:"notFoundView" */
@@ -55,7 +53,6 @@ const App = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
             <Route path="movies/:movieId/cast" element={<Cast />} />
             <Route path="*" element={<Navigate to="/login" replace />} />

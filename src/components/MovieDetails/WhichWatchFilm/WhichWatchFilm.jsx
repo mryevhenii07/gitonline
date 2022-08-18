@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { FetchWhichWatchFilm } from '../../../services/movie-api';
 import s from './WhichWatchFilm.module.css';
-// import imageDefault from '../../../../images/default.jpg';
 import imageDefault from '../../../images/default.jpg';
 import { IMAGE } from '../../../services/movie-api';
-// import { IMAGE } from '../../../services/movie-api';
 
 const WhichWatchFilm = () => {
   const [film, setFilm] = useState([]);
@@ -14,7 +12,6 @@ const WhichWatchFilm = () => {
   useEffect(() => {
     return FetchWhichWatchFilm().then(setFilm);
   }, []);
-  console.log(film);
   return (
     <div className={s.wrap}>
       <p className={s.titleSee}>What else to see</p>

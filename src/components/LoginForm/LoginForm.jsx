@@ -1,18 +1,11 @@
+import * as React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import Notiflix from 'notiflix';
 
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-
-import { Link } from 'react-router-dom';
-
-import { setUser } from '../store/slices/userSlice';
-import s from './RegisterForm/RegisterForm.module.css';
-
-import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
@@ -22,6 +15,12 @@ import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 
 import { FcGoogle } from 'react-icons/fc';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { setUser } from '../../store/slices/userSlice';
+
+import s from '../RegisterForm/RegisterForm.module.css';
+
+import { useAuth } from '../../hooks/use-auth';
 
 const Form = () => {
   const [isCheck, setIsCheck] = useState(false);
@@ -41,18 +40,18 @@ const Form = () => {
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange' });
 
+  let isAuth = useAuth();
+
   const onSubmit = ({ email, password, checkbox }) => {
     const auth = getAuth();
-    const user = auth.currentUser;
 
-    console.log(checkbox);
-
-    if (!user) {
-      Notiflix.Notify.warning('You entered an incorrect email or password');
+    if (!isAuth) {
+      Notiflix.Notify.warning('You entered an incorrect email or password'); ///???
     }
 
     signInWithEmailAndPassword(auth, email, password, checkbox)
       .then(({ user }) => {
+        console.log(isAuth);
         dispatch(
           setUser({
             email: user.email,

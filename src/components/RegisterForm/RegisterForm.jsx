@@ -3,7 +3,15 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase'; //dssd
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification, ///sddsds
+  updateProfile, //sdds
+} from 'firebase/auth';
+
 import { Link } from 'react-router-dom';
 
 import { setUser } from '../../store/slices/userSlice';
@@ -32,24 +40,63 @@ const Form = () => {
     reset,
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange' });
-  const onSubmit = ({ email, password, nickName, checkbox }) => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password, nickName, checkbox)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken,
-            nickName: nickName,
-            checkbox,
-          }),
-        );
-        navigate('/');
-      })
-      .catch(console.error);
+
+  const auth = getAuth();
+  const onSubmit = async ({ email, password, nickName, checkbox }) => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+        nickName,
+        checkbox,
+      )
+        .then(({ user }) => {
+          dispatch(
+            setUser({
+              email: user.email,
+              id: user.uid,
+              token: user.accessToken,
+              nickName: user.displayName,
+              checkbox,
+            }),
+          );
+          navigate('/');
+        })
+        .catch(console.error);
+    } catch (err) {
+      console.log(err);
+    }
+    await sendEmailVerification(auth.currentUser).catch(err =>
+      console.log(err),
+    );
+    await updateProfile(auth.currentUser, { displayName: nickName }).catch(
+      err => console.log(err),
+    );
     reset();
   };
+  // const onSubmit = ({ email, password, nickName, checkbox }) => {
+  //   const auth = getAuth();
+
+  //   createUserWithEmailAndPassword(auth, email, password, nickName, checkbox)
+  //     .then(({ user }) => {
+  //       console.log(user);
+  //       dispatch(
+  //         setUser({
+  //           email: user.email,
+  //           id: user.uid,
+  //           token: user.accessToken,
+  //           nickName,
+  //           /* nickName: nickName*/
+
+  //           checkbox,
+  //         }),
+  //       );
+  //       navigate('/');
+  //     })
+  //     .catch(console.error);
+  //   reset();
+  // };
 
   return (
     <Box
@@ -71,7 +118,6 @@ const Form = () => {
               minLength: { value: 3, message: 'Minimum 3 characters' },
               maxLength: { value: 10, message: 'Maximum 10 characters' },
             })}
-            type="text"
             id="standard-helperTexts"
             label="NickName"
             variant="standard"

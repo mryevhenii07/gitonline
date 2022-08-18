@@ -1,18 +1,16 @@
 import * as React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
-// import { BiLogOut } from 'react-icons/bi';
 import { BsBoxArrowInRight } from 'react-icons/bs';
 
 import SearchFilm from './SearchFilm/SearchFilm';
 import s from './Navigation.module.css';
 import gidonline from '../../images/gidonline.jpg';
-
 import { removeUser } from '../../store/slices/userSlice';
 
 const Navigation = () => {
   const dispatch = useDispatch();
+
   return (
     <div>
       <h1 className={s.gidOnline}>Git Online</h1>
@@ -81,9 +79,6 @@ const Navigation = () => {
             className={s.logout}
             onClick={() => dispatch(removeUser())}
           />
-          {/* <button onClick={() => dispatch(removeUser())}>
-            Logout from {email}
-          </button> */}
         </div>
       </header>
     </div>
