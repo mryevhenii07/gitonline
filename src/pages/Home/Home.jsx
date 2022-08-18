@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchTrending, fetchSearchFilm } from '../../services/movie-api';
 import Pagination from '../../components/Pagination/Pagination';
 import s from './Home.module.css';
-import SideBar from '../../components/Sidebar/SideBar';
+import SideBar from '../Sidebar/SideBar';
 import Ratings from '../../components/Rating/Rating';
 import { SearchContext } from '../../App';
 import imageDefault from '../../images/default.jpg';

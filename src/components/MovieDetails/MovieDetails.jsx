@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import { fetchInfoFilm } from '../../services/movie-api';
-import SideBar from '../Sidebar/SideBar';
+import SideBar from '../../pages/Sidebar/SideBar';
 import RatingDetails from './RatingDetails/RatingDetails';
 import Video from './Video/Video';
 import WhichWatchFilm from './WhichWatchFilm/WhichWatchFilm';

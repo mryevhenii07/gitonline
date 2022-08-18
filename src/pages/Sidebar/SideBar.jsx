@@ -6,6 +6,7 @@ import {
   fetchSidebarSerials,
 } from '../../services/movie-api';
 import s from './SideBar.module.css';
+
 import imageDefault from '../../images/default.jpg';
 import { IMAGE } from '../../services/movie-api';
 

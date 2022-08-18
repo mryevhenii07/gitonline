@@ -9,7 +9,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification, ///sddsds
-  updateProfile, //sdds
+  updateProfile,
 } from 'firebase/auth';
 
 import { Link } from 'react-router-dom';
@@ -21,6 +21,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
+import { FcGoogle } from 'react-icons/fc';
 
 const Form = () => {
   const [isCheck, setIsCheck] = useState(false);
@@ -73,30 +74,9 @@ const Form = () => {
     await updateProfile(auth.currentUser, { displayName: nickName }).catch(
       err => console.log(err),
     );
+
     reset();
   };
-  // const onSubmit = ({ email, password, nickName, checkbox }) => {
-  //   const auth = getAuth();
-
-  //   createUserWithEmailAndPassword(auth, email, password, nickName, checkbox)
-  //     .then(({ user }) => {
-  //       console.log(user);
-  //       dispatch(
-  //         setUser({
-  //           email: user.email,
-  //           id: user.uid,
-  //           token: user.accessToken,
-  //           nickName,
-  //           /* nickName: nickName*/
-
-  //           checkbox,
-  //         }),
-  //       );
-  //       navigate('/');
-  //     })
-  //     .catch(console.error);
-  //   reset();
-  // };
 
   return (
     <Box
@@ -205,6 +185,13 @@ const Form = () => {
             Sing Up
           </Button>
         </Stack>
+        <div className={s.wrapOr}>
+          <div className={s.lineOr}></div>OR <div className={s.lineOr}></div>
+        </div>
+        <button className={s.googleWrap}>
+          <FcGoogle />{' '}
+          <span className={s.googleText}>Sing in using Google</span>
+        </button>
         <p className={s.wrapLinkRegister}>
           I have an account{' '}
           <Link className={s.registerLink} to="/login">

@@ -50,8 +50,8 @@ const App = () => {
         {isAuth && <Genres />}
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
             <Route path="movies/:movieId/cast" element={<Cast />} />
