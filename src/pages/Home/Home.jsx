@@ -1,8 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Fuse from 'fuse.js';
 // import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import { fetchTrending, fetchSearchFilm } from '../../services/movie-api';
 import Pagination from '../../components/Pagination/Pagination';
@@ -19,7 +18,7 @@ import { useAuth } from '../../hooks/use-auth';
 const Home = () => {
   const { isAuth } = useAuth();
 
-  let navigation = useNavigate();
+  const { push } = useHistory();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [trends, setTrends] = useState([]);
@@ -53,9 +52,6 @@ const Home = () => {
   return isAuth ? (
     <div>
       <div className={s.wrap}>
-        {/* <button onClick={() => dispatch(removeUser())}>
-          Logout from {email}
-        </button> */}
         <ul className={s.list}>
           {characterResults.map(
             ({
@@ -90,7 +86,7 @@ const Home = () => {
       <Pagination onChangePage={number => setCurrentPage(number)} />
     </div>
   ) : (
-    <div>{navigation('/login')}</div>
+    <div>{push('/login')}</div>
   );
 };
 

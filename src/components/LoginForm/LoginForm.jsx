@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import Notiflix from 'notiflix';
 
@@ -25,7 +25,7 @@ import { useAuth } from '../../hooks/use-auth';
 const Form = () => {
   const [isCheck, setIsCheck] = useState(false);
 
-  let navigate = useNavigate();
+  const { push } = useHistory();
   const dispatch = useDispatch();
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -60,7 +60,7 @@ const Form = () => {
             checkbox,
           }),
         );
-        navigate('/');
+        push('/');
       })
       .catch(console.error);
     reset();

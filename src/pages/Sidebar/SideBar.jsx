@@ -31,7 +31,7 @@ const SideBar = () => {
         <div className={s.wrapListFilm}>
           <ul className={s.listFilms}>
             {films.map(({ original_title, id, poster_path }) => (
-              <Link to={`movies/${id}`} className={s.itemFilm} key={id}>
+              <Link to={`/movies/${id}`} className={s.itemFilm} key={id}>
                 <img
                   src={poster_path ? `${IMAGE}${poster_path}` : imageDefault}
                   alt="sidebar img"
@@ -51,7 +51,7 @@ const SideBar = () => {
         <div className={s.wrapListFilm}>
           <ul className={s.listFilms}>
             {serials.map(({ original_title, id, poster_path }) => (
-              <Link to={`movies/${id}`} className={s.itemFilm} key={id}>
+              <Link to={`/movies/${id}`} className={s.itemFilm} key={id}>
                 <img
                   src={`${IMAGE}${poster_path}`}
                   alt="sidebar img"

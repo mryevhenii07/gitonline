@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 import { fetchTrendingWeek } from '../../services/movie-api';
 import s from './TrendingDay.module.css';
@@ -8,16 +8,21 @@ import { IMAGE } from '../../services/movie-api';
 
 const TrendingDay = () => {
   const [trends, setTrends] = useState([]);
+
+  const { url } = useRouteMatch(); //////////////
+
   useEffect(() => {
     fetchTrendingWeek()
       .then(trends => trends.data.results)
       .then(setTrends);
   }, []);
+  // console.log(trends[1].id);
+
   return (
     <div className={s.wrap}>
       <ul className={s.list}>
         {trends.map(({ id, original_title, poster_path }) => (
-          <Link to={`movies/${id}`} key={id} className={s.item}>
+          <Link to={`/movies/${id}`} key={id} className={s.item}>
             <img
               src={poster_path ? `${IMAGE}${poster_path}` : imageDefault}
               alt="dd"

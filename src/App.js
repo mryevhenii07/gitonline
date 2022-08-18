@@ -1,6 +1,6 @@
-import { useState, createContext } from 'react';
-import { lazy, Suspense } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { useState, createContext, lazy, Suspense } from 'react';
+
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import 'normalize.css';
 import './App.css';
@@ -49,15 +49,16 @@ const App = () => {
         {isAuth && <TrendingDay />}
         {isAuth && <Genres />}
         <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="movies/:movieId" element={<MovieDetails />} />
-            <Route path="movies/:movieId/cast" element={<Cast />} />
-            <Route path="*" element={<Navigate to="/login" replace />} />
-            {/* <Route path="*" element={<NotFoundView />} /> */}
-          </Routes>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
+            <Route path="/movies/:movieId" component={MovieDetails} />
+
+            <Route path="/movies/:movieId/cast" component={Cast} />
+            {/* <Route path="*" component={<Navigate to="/login" replace />} /> */}
+            <Redirect to="/" component={NotFoundView} />
+          </Switch>
         </Suspense>
         {isAuth && <Footer />}
       </SearchContext.Provider>

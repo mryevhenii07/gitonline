@@ -17,7 +17,7 @@ const WhichWatchFilm = () => {
       <p className={s.titleSee}>What else to see</p>
       <ul className={s.list}>
         {film.map(({ id, original_title, poster_path }) => (
-          <Link to={`movies/${id}`} key={id} className={s.item}>
+          <Link to={`/movies/${id}`} key={id} className={s.item}>
             <img
               src={poster_path ? `${IMAGE}${poster_path}` : imageDefault}
               alt="dd"

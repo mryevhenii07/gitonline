@@ -30,13 +30,13 @@ const Navigation = () => {
               <NavLink
                 className={s.navLink}
                 to="/"
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        color: 'rgb(131, 129, 129)',
-                      }
-                    : { color: '#464545' }
-                }
+                // style={({ isActive }) =>
+                //   isActive
+                //     ? {
+                //         color: 'rgb(131, 129, 129)',
+                //       }
+                //     : { color: '#464545' }
+                // }
               >
                 Home
               </NavLink>
@@ -45,13 +45,13 @@ const Navigation = () => {
               <NavLink
                 className={s.navLink}
                 to="/"
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        color: 'rgb(131, 129, 129)',
-                      }
-                    : { color: '#464545' }
-                }
+                // style={({ isActive }) =>
+                //   isActive
+                //     ? {
+                //         color: 'rgb(131, 129, 129)',
+                //       }
+                //     : { color: '#464545' }
+                // }
               >
                 Hit
               </NavLink>
@@ -60,13 +60,13 @@ const Navigation = () => {
               <NavLink
                 className={s.navLink}
                 to="/"
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        color: 'rgb(131, 129, 129)',
-                      }
-                    : { color: '#464545' }
-                }
+                // style={({ isActive }) =>
+                //   isActive
+                //     ? {
+                //         color: 'rgb(131, 129, 129)',
+                //       }
+                //     : { color: '#464545' }
+                // }
               >
                 Top
               </NavLink>

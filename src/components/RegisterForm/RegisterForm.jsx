@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { auth } from '../../firebase'; //dssd
 
 import {
@@ -11,8 +11,6 @@ import {
   sendEmailVerification, ///sddsds
   updateProfile,
 } from 'firebase/auth';
-
-import { Link } from 'react-router-dom';
 
 import { setUser } from '../../store/slices/userSlice';
 import s from './RegisterForm.module.css';
@@ -26,7 +24,7 @@ import { FcGoogle } from 'react-icons/fc';
 const Form = () => {
   const [isCheck, setIsCheck] = useState(false);
 
-  let navigate = useNavigate();
+  const { push } = useHistory();
   const dispatch = useDispatch();
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -62,7 +60,7 @@ const Form = () => {
               checkbox,
             }),
           );
-          navigate('/');
+          push('/');
         })
         .catch(console.error);
     } catch (err) {
