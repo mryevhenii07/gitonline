@@ -1,5 +1,4 @@
 import { useState, createContext, lazy, Suspense } from 'react';
-
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import 'normalize.css';
@@ -41,6 +40,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const { isAuth } = useAuth();
+  console.log(isAuth);
 
   return (
     <div style={{ width: 1200, margin: ' 0 auto' }}>
@@ -53,7 +53,9 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
-            <Route path="/movies/:movieId" component={MovieDetails} />
+            {isAuth && (
+              <Route path="/movies/:movieId" component={MovieDetails} />
+            )}
 
             <Route path="/movies/:movieId/cast" component={Cast} />
             {/* <Route path="*" component={<Navigate to="/login" replace />} /> */}
