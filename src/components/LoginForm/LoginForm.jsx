@@ -1,26 +1,22 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
-
 import Notiflix from 'notiflix';
 
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
 import Checkbox from '@mui/material/Checkbox';
-
 import { FcGoogle } from 'react-icons/fc';
+
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlice';
+import { useAuth } from '../../hooks/use-auth';
 
 import s from '../RegisterForm/RegisterForm.module.css';
-
-import { useAuth } from '../../hooks/use-auth';
 
 const Form = () => {
   const [isCheck, setIsCheck] = useState(false);
@@ -51,7 +47,6 @@ const Form = () => {
 
     signInWithEmailAndPassword(auth, email, password, checkbox)
       .then(({ user }) => {
-        console.log(isAuth);
         dispatch(
           setUser({
             email: user.email,
@@ -63,6 +58,7 @@ const Form = () => {
         push('/');
       })
       .catch(console.error);
+
     reset();
   };
 
@@ -94,6 +90,7 @@ const Form = () => {
             id="standard-helperText"
             label="Email"
             variant="standard"
+            defaultValue="abcd@gmail.com"
           />
           <div className={s.wrapError}>
             {errors?.email && (

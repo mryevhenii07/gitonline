@@ -8,8 +8,7 @@ import { auth } from '../../../firebase';
 const Comments = () => {
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
-
-  const nickName = auth.currentUser.displayName;
+  const [nickName, setNickName] = useState(200);
 
   const {
     register,
@@ -20,6 +19,7 @@ const Comments = () => {
 
   const onSubmit = data => {
     setTodoComment((prevState = []) => {
+      setNickName(auth.currentUser.displayName);
       return [...prevState, data];
     });
 
@@ -59,7 +59,9 @@ const Comments = () => {
       <ul>
         {todoComment.map(({ name, text }, ind) => (
           <li className={s.todoWrap} key={ind}>
-            <p className={s.name}>NickName: {nickName}</p>
+            <p className={s.name}>
+              NickName: <span className={s.nickName}>{nickName}</span>{' '}
+            </p>
             <div className={s.wrapImgText}>
               <img
                 className={s.img}

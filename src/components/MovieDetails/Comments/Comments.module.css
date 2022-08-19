@@ -72,14 +72,18 @@ font-size: 20px;
   
 }
 .name{
+    padding: 0 10px;
     width: 100%;
+    height: 30px;
     display: flex;
+align-items: center;
     background-color: rgb(58, 57, 57);
     color: rgba(153, 141, 123, 255);
-    padding: 10px 10px;
-    font-size: 19px;
+  
+    font-size: 16px;
   
 }
+.nickName{display: block;margin-left: 10px; font-size: 19px;color: rgb(170, 176, 174);}
 .wrapImgText{
 margin-top: 5px;
     display: flex;
