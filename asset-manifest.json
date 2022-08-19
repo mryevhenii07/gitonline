@@ -9,8 +9,8 @@
     "home.js": "/gitonline/static/js/home.27ce528a.chunk.js",
     "home.js.map": "/gitonline/static/js/home.27ce528a.chunk.js.map",
     "main.css": "/gitonline/static/css/main.e21631f3.chunk.css",
-    "main.js": "/gitonline/static/js/main.b75090a5.chunk.js",
-    "main.js.map": "/gitonline/static/js/main.b75090a5.chunk.js.map",
+    "main.js": "/gitonline/static/js/main.b2f95cee.chunk.js",
+    "main.js.map": "/gitonline/static/js/main.b2f95cee.chunk.js.map",
     "movieDetails.css": "/gitonline/static/css/movieDetails.35a56395.chunk.css",
     "movieDetails.js": "/gitonline/static/js/movieDetails.2798501a.chunk.js",
     "movieDetails.js.map": "/gitonline/static/js/movieDetails.2798501a.chunk.js.map",
@@ -44,6 +44,6 @@
     "static/css/7.679831fc.chunk.css",
     "static/js/7.cffb6f76.chunk.js",
     "static/css/main.e21631f3.chunk.css",
-    "static/js/main.b75090a5.chunk.js"
+    "static/js/main.b2f95cee.chunk.js"
   ]
 }
