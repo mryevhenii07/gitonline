@@ -67,8 +67,8 @@ const Comments = () => {
             <div className={s.wrapImgText}>
               <img
                 className={s.img}
-                src={profilePicture}
-                // src={profilePicture && imagesDefaultComment}
+                // src={profilePicture}
+                src={profilePicture || imagesDefaultComment}
                 alt=""
                 width="100"
                 height="110"

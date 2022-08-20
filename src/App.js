@@ -55,7 +55,6 @@ const App = () => {
         <Suspense
           fallback={
             <div>
-              {' '}
               <Spiner />
             </div>
           }
