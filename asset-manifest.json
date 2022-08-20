@@ -5,19 +5,19 @@
     "cast.css": "/gitonline/static/css/cast.77407f17.chunk.css",
     "cast.js": "/gitonline/static/js/cast.228eb4cf.chunk.js",
     "cast.js.map": "/gitonline/static/js/cast.228eb4cf.chunk.js.map",
-    "home.css": "/gitonline/static/css/home.d3811c77.chunk.css",
-    "home.js": "/gitonline/static/js/home.1caadb42.chunk.js",
-    "home.js.map": "/gitonline/static/js/home.1caadb42.chunk.js.map",
+    "home.css": "/gitonline/static/css/home.ffd21f00.chunk.css",
+    "home.js": "/gitonline/static/js/home.291e9f6f.chunk.js",
+    "home.js.map": "/gitonline/static/js/home.291e9f6f.chunk.js.map",
     "main.css": "/gitonline/static/css/main.bf077e5e.chunk.css",
-    "main.js": "/gitonline/static/js/main.f5681d1f.chunk.js",
-    "main.js.map": "/gitonline/static/js/main.f5681d1f.chunk.js.map",
+    "main.js": "/gitonline/static/js/main.b5a81b7a.chunk.js",
+    "main.js.map": "/gitonline/static/js/main.b5a81b7a.chunk.js.map",
     "movieDetails.css": "/gitonline/static/css/movieDetails.8caeb924.chunk.css",
     "movieDetails.js": "/gitonline/static/js/movieDetails.274eb007.chunk.js",
     "movieDetails.js.map": "/gitonline/static/js/movieDetails.274eb007.chunk.js.map",
     "notFoundView.js": "/gitonline/static/js/notFoundView.e6b0c863.chunk.js",
     "notFoundView.js.map": "/gitonline/static/js/notFoundView.e6b0c863.chunk.js.map",
-    "runtime-main.js": "/gitonline/static/js/runtime-main.13c85b24.js",
-    "runtime-main.js.map": "/gitonline/static/js/runtime-main.13c85b24.js.map",
+    "runtime-main.js": "/gitonline/static/js/runtime-main.64b9c8e0.js",
+    "runtime-main.js.map": "/gitonline/static/js/runtime-main.64b9c8e0.js.map",
     "static/css/7.679831fc.chunk.css": "/gitonline/static/css/7.679831fc.chunk.css",
     "static/js/7.3746657a.chunk.js": "/gitonline/static/js/7.3746657a.chunk.js",
     "static/js/7.3746657a.chunk.js.map": "/gitonline/static/js/7.3746657a.chunk.js.map",
@@ -28,7 +28,7 @@
     "index.html": "/gitonline/index.html",
     "static/css/7.679831fc.chunk.css.map": "/gitonline/static/css/7.679831fc.chunk.css.map",
     "static/css/cast.77407f17.chunk.css.map": "/gitonline/static/css/cast.77407f17.chunk.css.map",
-    "static/css/home.d3811c77.chunk.css.map": "/gitonline/static/css/home.d3811c77.chunk.css.map",
+    "static/css/home.ffd21f00.chunk.css.map": "/gitonline/static/css/home.ffd21f00.chunk.css.map",
     "static/css/main.bf077e5e.chunk.css.map": "/gitonline/static/css/main.bf077e5e.chunk.css.map",
     "static/css/movieDetails.8caeb924.chunk.css.map": "/gitonline/static/css/movieDetails.8caeb924.chunk.css.map",
     "static/js/0.3c28f7dd.chunk.js.LICENSE.txt": "/gitonline/static/js/0.3c28f7dd.chunk.js.LICENSE.txt",
@@ -40,10 +40,10 @@
     "static/media/gidonline.f0e98dab.jpg": "/gitonline/static/media/gidonline.f0e98dab.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.13c85b24.js",
+    "static/js/runtime-main.64b9c8e0.js",
     "static/css/7.679831fc.chunk.css",
     "static/js/7.3746657a.chunk.js",
     "static/css/main.bf077e5e.chunk.css",
-    "static/js/main.f5681d1f.chunk.js"
+    "static/js/main.b5a81b7a.chunk.js"
   ]
 }
