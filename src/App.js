@@ -12,8 +12,6 @@ import { useAuth } from './hooks/use-auth';
 
 import Spiner from './components/Spiner/Spiner';
 
-// import MyTools from './pages/MyTools/MyTools';
-
 const Home = lazy(() =>
   import('./pages/Home/Home' /* webpackChunkName:"home" */),
 );
@@ -63,17 +61,14 @@ const App = () => {
           }
         >
           <Switch>
+            <Route exact path="/login" component={LoginPage} />
             <Route exact path="/" component={Home} />
-            <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
-            {/* <Route path="/tools" component={MyTools} /> */}
-
             {isAuth && (
               <Route path="/movies/:movieId" component={MovieDetails} />
             )}
-
             <Route path="/movies/:movieId/cast" component={Cast} />
-            {/* <Route path="*" component={<Navigate to="/login" replace />} /> */}
+            {/* <Route path="*" component={NotFoundView} /> */}
             <Redirect to="/" component={NotFoundView} />
           </Switch>
         </Suspense>

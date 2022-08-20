@@ -1,24 +1,28 @@
 import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
-import { fetchSearchFilm, fetchTrending } from '../../services/movie-api';
+// import {
+//   fetchSearchFilm,
+//   fetchTrending,
+//   FetchWhichWatchFilm,
+//   fetchSidebarFilms,
+// } from '../../services/movie-api';
 
 import s from './Pagination.module.css';
 
 const Pagination = ({ onChangePage }) => {
-  const [totalPage, setTotalPage] = useState(0);
+  // const [totalPage, setTotalPage] = useState([]);
 
   // useEffect(() => {
-  //   fetchSearchFilm().then(console.log);
-  // }, [totalPage]);
-
+  //   fetchTrending(1).then(res => console.log(res));
+  // }, []);
+  // console.log(totalPage);
   return (
     <ReactPaginate
-      className={s}
       breakLabel="..."
       nextLabel=" >"
       onPageChange={e => onChangePage(e.selected + 1)}
-      pageRangeDisplayed={20}
-      pageCount={7}
+      pageRangeDisplayed={3}
+      pageCount={55}
       previousLabel="< "
       renderOnZeroPageCount={null}
       className={s.pagination}
@@ -27,6 +31,7 @@ const Pagination = ({ onChangePage }) => {
       activeLinkClassName={s.activeLink}
       nextLinkClassName={s.nextLink}
       previousLinkClassName={s.previousLink}
+      breakClassName={s.nextLink}
     />
   );
 };
