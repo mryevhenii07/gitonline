@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { BsBoxArrowInRight } from 'react-icons/bs';
@@ -8,8 +9,17 @@ import s from './Navigation.module.css';
 import gidonline from '../../images/gidonline.jpg';
 import { removeUser } from '../../store/slices/userSlice';
 
+import { auth } from '../../firebase';
+// import img from '../../images/default.jpg';
+
 const Navigation = () => {
+  const [profilePicture, setProfilePicture] = useState('');
   const dispatch = useDispatch();
+  console.log(auth);
+
+  // setProfilePicture(auth.currentUser.photoURL);
+
+  // console.log('kkk');
 
   return (
     <div>
@@ -27,54 +37,26 @@ const Navigation = () => {
 
           <ul className={s.navigation}>
             <li className={s.navigation_item}>
-              <NavLink
-                className={s.navLink}
-                to="/"
-                // style={({ isActive }) =>
-                //   isActive
-                //     ? {
-                //         color: 'rgb(131, 129, 129)',
-                //       }
-                //     : { color: '#464545' }
-                // }
-              >
+              <NavLink className={s.navLink} to="/">
                 Home
               </NavLink>
             </li>
             <li className={s.navigation_item}>
-              <NavLink
-                className={s.navLink}
-                to="/"
-                // style={({ isActive }) =>
-                //   isActive
-                //     ? {
-                //         color: 'rgb(131, 129, 129)',
-                //       }
-                //     : { color: '#464545' }
-                // }
-              >
+              <NavLink className={s.navLink} to="/">
                 Hit
               </NavLink>
             </li>
             <li className={s.navigation_item}>
-              <NavLink
-                className={s.navLink}
-                to="/"
-                // style={({ isActive }) =>
-                //   isActive
-                //     ? {
-                //         color: 'rgb(131, 129, 129)',
-                //       }
-                //     : { color: '#464545' }
-                // }
-              >
+              <NavLink className={s.navLink} to="/">
                 Top
               </NavLink>
             </li>
           </ul>
         </div>
         <div className={s.login}>
-          <span className={s.logoutText}>LogOut</span>
+          <span className={s.logoutText}>
+            {/* <img src={profilePicture} alt="" className={s.profilePic} /> */}
+          </span>
           <BsBoxArrowInRight
             className={s.logout}
             onClick={() => dispatch(removeUser())}

@@ -1,9 +1,16 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
+import { fetchSearchFilm, fetchTrending } from '../../services/movie-api';
 
 import s from './Pagination.module.css';
 
 const Pagination = ({ onChangePage }) => {
+  const [totalPage, setTotalPage] = useState(0);
+
+  // useEffect(() => {
+  //   fetchSearchFilm().then(console.log);
+  // }, [totalPage]);
+
   return (
     <ReactPaginate
       className={s}

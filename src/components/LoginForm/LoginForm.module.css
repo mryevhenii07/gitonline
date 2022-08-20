@@ -27,7 +27,7 @@
 .checkboxSpan{text-decoration:underline; }
 .formLink{color: rgb(24, 129, 226);}
 .wrapBtn{width: 100%; display: flex;justify-content: center;margin-top: 5px;}
-.wrapLinkRegister{margin-left: 20px; margin-top: 10px;}
+.wrapLinkRegister{margin-left: 20px;}
 .registerLink{color: rgb(24, 129, 226);}
 
 

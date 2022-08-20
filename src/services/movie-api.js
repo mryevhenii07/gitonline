@@ -7,7 +7,7 @@ export const IMAGE = 'https://image.tmdb.org/t/p/w500/';
 export function fetchTrending(currentPage) {
   return axios
     .get(
-      `${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=${currentPage}&total_pages=200`,
+      `${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=${currentPage}`,
     )
     .then(trends => trends)
     .catch(console.error('rrrrrrrrrrr-fetchTrending'));

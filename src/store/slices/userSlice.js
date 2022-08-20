@@ -6,6 +6,7 @@ const initialState = {
   id: null,
   nickName: null,
   checkbox: null,
+  profilePic: null,
 };
 const userSlice = createSlice({
   name: 'user',
@@ -17,6 +18,7 @@ const userSlice = createSlice({
       state.id = action.payload.id;
       state.nickName = action.payload.nickName;
       state.checkbox = action.payload.checkbox;
+      state.profilePic = action.payload.profilePic;
     },
     removeUser(state) {
       state.email = null;
@@ -24,6 +26,7 @@ const userSlice = createSlice({
       state.id = null;
       state.nickName = null;
       state.checkbox = null;
+      state.profilePic = null;
     },
   },
 });

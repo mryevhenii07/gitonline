@@ -10,6 +10,10 @@ import Genres from './components/Genres/Genres';
 import Footer from './components/Footer/Footer';
 import { useAuth } from './hooks/use-auth';
 
+import Spiner from './components/Spiner/Spiner';
+
+// import MyTools from './pages/MyTools/MyTools';
+
 const Home = lazy(() =>
   import('./pages/Home/Home' /* webpackChunkName:"home" */),
 );
@@ -25,11 +29,13 @@ const NotFoundView = lazy(() =>
     './pages/NotFoundView/NotFoundView' /* webpackChunkName:"notFoundView" */
   ),
 );
+
 const MovieDetails = lazy(() =>
   import(
     './components/MovieDetails/MovieDetails' /* webpackChunkName:"movieDetails" */
   ),
 );
+
 const Cast = lazy(() =>
   import('./pages/Cast/Cast' /* webpackChunkName:"cast" */),
 );
@@ -48,11 +54,20 @@ const App = () => {
         {isAuth && <Navigation />}
         {isAuth && <TrendingDay />}
         {isAuth && <Genres />}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              {' '}
+              <Spiner />
+            </div>
+          }
+        >
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
+            {/* <Route path="/tools" component={MyTools} /> */}
+
             {isAuth && (
               <Route path="/movies/:movieId" component={MovieDetails} />
             )}

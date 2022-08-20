@@ -8,7 +8,8 @@ import { auth } from '../../../firebase';
 const Comments = () => {
   const [todoComment, setTodoComment] = useState([]);
   const [maxLetters, setMaxLetters] = useState(200);
-  const [nickName, setNickName] = useState(200);
+  const [nickName, setNickName] = useState('');
+  const [profilePicture, setProfilePicture] = useState('');
 
   const {
     register,
@@ -20,6 +21,7 @@ const Comments = () => {
   const onSubmit = data => {
     setTodoComment((prevState = []) => {
       setNickName(auth.currentUser.displayName);
+      setProfilePicture(auth.currentUser.photoURL);
       return [...prevState, data];
     });
 
@@ -65,7 +67,8 @@ const Comments = () => {
             <div className={s.wrapImgText}>
               <img
                 className={s.img}
-                src={imagesDefaultComment}
+                src={profilePicture}
+                // src={profilePicture && imagesDefaultComment}
                 alt=""
                 width="100"
                 height="110"
